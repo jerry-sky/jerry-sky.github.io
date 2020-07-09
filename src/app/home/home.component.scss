@@ -1,0 +1,26 @@
+header {
+    text-align: center;
+    border-bottom: solid 1px darkgray;
+
+    p {
+        font-size: 2em;
+    }
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-flow: column;
+
+    .logo {
+        margin-top: 50px;
+        box-shadow: #222222 0 0 15px;
+    }
+
+    .note {
+        font-style: italic;
+        font-weight: bold;
+    }
+}
