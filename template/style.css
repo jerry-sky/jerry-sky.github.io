@@ -4,8 +4,9 @@ body {
     background-color: #2f3031;
 }
 
-a {
+a, a:visited {
     text-decoration: none;
+    color: #407cc2;
 }
 
 code {
