@@ -19,9 +19,9 @@ keywords: 'personal, website, jerry, sky, jerzy, wroczyński, pwr, wust, bash, t
 
 <div class="buttons">
 
-[<img src="/assets/github.png" class="icon" /> GitHub][github]
-[YouTube][yt]
-[Twitter][twitter]
-[LinkedIn][linkedin]
+[![GitHub](/assets/github.png) GitHub][github]
+[![YouTube](/assets/youtube.png) YouTube][yt]
+[![Twitter](/assets/twitter.ico) Twitter][twitter]
+[![LinkedIn](/assets/linkedin.ico) LinkedIn][linkedin]
 
 </div>
