@@ -27,19 +27,19 @@ body {
     margin: auto;
 }
 
-.buttons {
+.buttons p {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
-.buttons a {
+.buttons p > a {
     padding: 15px;
     display: flex;
     align-items: center;
 }
 
-.buttons a > img {
+.buttons p > a > img {
     margin-right: 6px;
     width: 12px;
     height: 12px;
