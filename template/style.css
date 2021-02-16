@@ -27,10 +27,6 @@ body {
     margin: auto;
 }
 
-.icon {
-    width: 12px;
-}
-
 .buttons {
     display: flex;
     justify-content: space-evenly;
@@ -45,6 +41,8 @@ body {
 
 .buttons a > img {
     margin-right: 6px;
+    width: 12px;
+    height: 12px;
 }
 
 /* support most screen sizes */
