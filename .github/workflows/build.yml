@@ -27,11 +27,13 @@ jobs:
           head: 'template/head.html'
 
       - name: 'Get current time'
-        uses: gerred/actions/current-time@v1.0.0
+        uses: gerred/current-time@v1.0.0
         id: current-time
 
       - name: 'push the changes'
-        uses: EndBug/add-and-commit@v7.7.0
+        uses: EndBug/add-and-commit@v7.0.0
         with:
           message: "deployed on ${{ steps.current-time.outputs.time }}"
-          ref: 'gh-pages'
+          branch: 'gh-pages'
+          cwd: './dist/'
+          add: './*'
