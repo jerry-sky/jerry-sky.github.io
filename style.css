@@ -4,12 +4,7 @@ body {
     background-color: #2f3031;
 }
 
-
-a:visited {
-    color: initial;
-}
-
-a {
+a, a:visited {
     text-decoration: none;
     color: #407cc2;
 }
