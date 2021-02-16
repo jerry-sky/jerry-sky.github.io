@@ -1,5 +1,7 @@
 body {
     font-family: 'Merriweather', serif;
+    color: #b4b3b1;
+    background-color: #2f3031;
 }
 
 a {
@@ -8,20 +10,6 @@ a {
 
 code {
     font-family: 'Fira Code', monospace;
-}
-
-header#title-block-header > .author {
-    font-size: .75em;
-    margin: 0;
-    font-style: italic;
-}
-
-/* make sure authors are separated with commas */
-header#title-block-header > .author > span.author::after {
-    content: ','
-}
-header#title-block-header > .author > span.author:last-child::after {
-    content: ''
 }
 
 img {
@@ -36,6 +24,7 @@ body {
 
 .logo {
     width: 30%;
+    display: block;
     margin: auto;
 }
 
@@ -71,7 +60,7 @@ body {
     }
 
     .logo {
-        width: 100%;
+        width: 40%;
     }
 }
 
