@@ -17,8 +17,6 @@ img {
     max-width: 100%;
 }
 
-/* support most screen sizes */
-/* very large screens (TVs and other) */
 body {
     margin: 0 30%;
 }
@@ -29,10 +27,26 @@ body {
     margin: auto;
 }
 
-.icon {
-    width: 12px;
+.buttons p {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
+.buttons p > a {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.buttons p > a > img {
+    margin-right: 6px;
+    width: 12px;
+    height: 12px;
+}
+
+/* support most screen sizes */
+/* very large screens (TVs and other) */
 /* big screens (desktops) */
 @media (max-width: 1200px) {
     body {

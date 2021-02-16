@@ -17,9 +17,11 @@ keywords: 'personal, website, jerry, sky, jerzy, wroczyński, pwr, wust, bash, t
 # Jerry Sky
 *a.k.a. Jerzy Wroczyński, jwroczynski*
 
-## I’m present on:
+<div class="buttons">
 
-- [<img src="/assets/github.png" class="icon" /> GitHub][github],
-- [YouTube][yt],
-- [Twitter][twitter],
-- [LinkedIn][linkedin].
+[<img src="/assets/github.png" class="icon" /> GitHub][github]
+[YouTube][yt]
+[Twitter][twitter]
+[LinkedIn][linkedin]
+
+</div>
