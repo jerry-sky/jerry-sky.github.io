@@ -6,7 +6,7 @@ body {
 
 a, a:visited {
     text-decoration: none;
-    color: #407cc2;
+    color: #0da5ec;
 }
 
 code {
@@ -19,6 +19,15 @@ img {
 
 body {
     margin: 0 30%;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    min-height: 500px;
+    flex-flow: column;
+    text-align: center;
+    justify-content: center;
 }
 
 .logo {
@@ -77,10 +86,4 @@ body {
     .logo {
         width: 40%;
     }
-}
-
-/* adjust the top and bottom margin a little */
-body {
-    margin-top: -5px;
-    margin-bottom: 20px;
 }
