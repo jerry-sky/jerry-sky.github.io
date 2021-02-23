@@ -1,0 +1,6 @@
+
+# ignore the output directory
+dist
+
+# ignore the executable
+/pandoc

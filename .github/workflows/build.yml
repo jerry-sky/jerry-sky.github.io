@@ -19,12 +19,13 @@ jobs:
           path: 'dist'
           ref: 'gh-pages'
 
-      - name: 'render the repository as a website'
-        uses: 'jerry-sky/vyrow@v0.5.4'
-        with:
-          pandoc-template: 'template/document-template.html'
-          stylesheet: 'template/style.css'
-          head: 'template/head.html'
+      - name: 'Download Pandoc'
+        shell: bash
+        run: .github/workflows/download-pandoc.sh
+
+      - name: 'Render the website'
+        shell: bash
+        run: ./build.sh
 
       - name: 'Get current time'
         uses: gerred/current-time@v1.0.0
