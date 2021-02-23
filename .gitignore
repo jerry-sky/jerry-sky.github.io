@@ -2,5 +2,6 @@
 # ignore the output directory
 dist
 
-# ignore the executable
+# ignore all the executables
 /pandoc
+/sass
