@@ -1,0 +1,193 @@
+body {
+    font-family: "Merriweather", serif;
+    color: #b4b3b1;
+    background-color: #2f3031;
+}
+
+a,
+a:visited {
+    text-decoration: none;
+    color: #0da5ec;
+}
+
+code {
+    font-family: "Fira Code", monospace;
+}
+
+img {
+    max-width: 100%;
+}
+
+@keyframes bg-movement-one {
+    0% {
+        transform: rotate(45deg) translateY(150vh);
+    }
+    100% {
+        transform: rotate(45deg) translateY(-150vh);
+    }
+}
+
+@keyframes bg-movement-two {
+    0% {
+        transform: rotate(45deg) translateY(0vh);
+    }
+    50% {
+        transform: rotate(45deg) translateY(-150vh);
+        opacity: 1;
+    }
+    51% {
+        transform: rotate(45deg) translateY(-150vh);
+        opacity: 0;
+    }
+    52% {
+        transform: rotate(45deg) translateY(150vh);
+        opacity: 0;
+    }
+    53% {
+        transform: rotate(45deg) translateY(150vh);
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(45deg) translateY(0vh);
+    }
+}
+
+.background {
+    position: fixed;
+    left: -25vh;
+    top: -25vh;
+    z-index: -1;
+    width: 150vw;
+    height: 150vh;
+    animation-name: bg-movement-one;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    transform-origin: center center;
+
+    // the other copy of those three layers need to be offset
+    &.two {
+        animation-name: bg-movement-two;
+    }
+
+    .background-particle {
+        position: relative;
+        display: inline-block;
+        z-index: -1;
+    }
+
+    @mixin background-particle($girth, $length, $colour) {
+        width: $girth;
+        height: $length;
+        // background-color: $colour;
+        box-shadow: inset 0 $length ($length / 2) ($length * -3 / 4) $colour;
+    }
+
+    // every layer can have its own shade of the base colour
+    $base-colour: rgba(255,255,255, 0.1);
+    $slow-colour: fade-in($base-colour, 0);
+    $medium-colour: fade-in($base-colour, 0);
+    $fast-colour: fade-in($base-colour, 0);
+
+    $particle-quantity: 25;
+
+    &.slow {
+        animation-duration: 400s;
+
+        & > .background-particle {
+            @include background-particle(10px, 64px, $slow-colour);
+        }
+    }
+    &.medium {
+        animation-duration: 200s;
+
+        & > .background-particle {
+            @include background-particle(6px, 48px, $medium-colour);
+        }
+    }
+    &.fast {
+        animation-duration: 100s;
+
+        & > .background-particle {
+            @include background-particle(4px, 32px, $fast-colour);
+        }
+    }
+    @each $speed in slow, medium, fast {
+        @for $i from 1 through $particle-quantity {
+            &.#{$speed} > .background-particle:nth-child(#{$i}) {
+                top: random(100) * 1%;
+                left: random(100) * 1%;
+            }
+        }
+    }
+}
+
+body {
+    margin: 0 30%;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    min-height: 500px;
+    flex-flow: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.logo {
+    width: 30%;
+    display: block;
+    margin: auto;
+}
+
+.buttons p {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.buttons p > a {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.buttons p > a > img {
+    margin-right: 6px;
+    width: 12px;
+    height: 12px;
+}
+
+/* support most screen sizes */
+/* very large screens (TVs and other) */
+/* big screens (desktops) */
+@media (max-width: 1200px) {
+    body {
+        margin: 0 25%;
+    }
+}
+
+/* medium screens (laptops) */
+@media (max-width: 1024px) {
+    body {
+        margin: 0 15%;
+    }
+}
+
+/* smaller screens (tablets) */
+@media (max-width: 768px) {
+    body {
+        margin: 0 10%;
+    }
+}
+
+/* small screens (phones) */
+@media (max-width: 480px) {
+    body {
+        margin: 0 10px;
+    }
+
+    .logo {
+        width: 40%;
+    }
+}
