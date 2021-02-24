@@ -20,35 +20,35 @@ img {
 
 @keyframes bg-movement-one {
     0% {
-        transform: rotate(45deg) translateY(150vh);
+        transform: rotate(45deg) translate(0, 150vh, 0);
     }
     100% {
-        transform: rotate(45deg) translateY(-150vh);
+        transform: rotate(45deg) translate(0, -150vh, 0);
     }
 }
 
 @keyframes bg-movement-two {
     0% {
-        transform: rotate(45deg) translateY(0vh);
+        transform: rotate(45deg) translate(0, 0vh, 0);
     }
     50% {
-        transform: rotate(45deg) translateY(-150vh);
+        transform: rotate(45deg) translate(0, -150vh, 0);
         opacity: 1;
     }
     51% {
-        transform: rotate(45deg) translateY(-150vh);
+        transform: rotate(45deg) translate(0, -150vh, 0);
         opacity: 0;
     }
     52% {
-        transform: rotate(45deg) translateY(150vh);
+        transform: rotate(45deg) translate(0, 150vh, 0);
         opacity: 0;
     }
     53% {
-        transform: rotate(45deg) translateY(150vh);
+        transform: rotate(45deg) translate(0, 150vh, 0);
         opacity: 1;
     }
     100% {
-        transform: rotate(45deg) translateY(0vh);
+        transform: rotate(45deg) translate(0, 0vh, 0);
     }
 }
 
@@ -69,6 +69,10 @@ img {
         animation-name: bg-movement-two;
     }
 
+    // for now the animations are disabled due to performance issues
+    animation: none;
+    transform: rotate(45deg);
+
     .background-particle {
         position: relative;
         display: inline-block;
@@ -83,12 +87,12 @@ img {
     }
 
     // every layer can have its own shade of the base colour
-    $base-colour: rgba(255,255,255, 0.1);
+    $base-colour: rgba(255,255,255, 0.05);
     $slow-colour: fade-in($base-colour, 0);
     $medium-colour: fade-in($base-colour, 0);
     $fast-colour: fade-in($base-colour, 0);
 
-    $particle-quantity: 25;
+    $particle-quantity: 50;
 
     &.slow {
         animation-duration: 400s;
