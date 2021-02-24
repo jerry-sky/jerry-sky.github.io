@@ -23,6 +23,10 @@ jobs:
         shell: bash
         run: .github/workflows/download-pandoc.sh
 
+      - name: 'Download Sass'
+        shell: bash
+        run: .github/workflows/download-sass.sh
+
       - name: 'Render the website'
         shell: bash
         run: ./build.sh
