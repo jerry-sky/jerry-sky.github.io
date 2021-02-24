@@ -6,10 +6,10 @@ description: 'Personal website of Jerry Sky a.k.a. Jerzy Wroczyński (jwroczynsk
 keywords: 'personal, website, jerry, sky, jerzy, wroczyński, pwr, wust, bash, typescript, latex, contact, projects, programming, computer science'
 ---
 
-[github]: https://github.com/jerry-sky
-[yt]: https://www.youtube.com/channel/UCU3CxcihDdt75fV5jeODOEQ
-[twitter]: https://twitter.com/JerrySky27
-[linkedin]: https://www.linkedin.com/in/jerzy-wroczy%C5%84ski-bb0333205/
+[github]: https://github.com/jerry-sky {target="_blank"}
+[yt]: https://www.youtube.com/channel/UCU3CxcihDdt75fV5jeODOEQ {target="_blank"}
+[twitter]: https://twitter.com/JerrySky27 {target="_blank"}
+[linkedin]: https://www.linkedin.com/in/jerzy-wroczy%C5%84ski-bb0333205/ {target="_blank"}
 
 <div class="container">
 
