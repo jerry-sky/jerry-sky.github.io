@@ -1,16 +1,29 @@
 #!/bin/bash
 
-DIR="${BASH_SOURCE%/*}"
+SRC_DIR="${BASH_SOURCE%/*}"
+DIR="${SRC_DIR%/*}"
+
+# environment: root repository directory
+cd $DIR
 
 # prepare the output directory
 mkdir -p dist
 cp -r assets dist/
 
+# download Sass and Pandoc if necessary
+(
+    cd $SRC_DIR
+    if [ ! -f pandoc -o ! -f sass ]; then
+        ./download-pandoc.sh
+        ./download-sass.sh
+    fi
+)
+
 # render the css
-$DIR/sass template/style.scss > dist/style.css
+$SRC_DIR/sass template/style.scss > dist/style.css
 
 # prepare the renderer
-renderer="$DIR/pandoc \
+renderer="$SRC_DIR/pandoc \
     --template template/document-template.html \
     --from markdown-blank_before_header-implicit_figures+lists_without_preceding_blankline+gfm_auto_identifiers \
     --to html \
@@ -32,5 +45,5 @@ for j in one two; do
     done
 done
 
-# render the main readme file
-$renderer index.md --output dist/index.html --include-before-body="$background"
+# render the main index file
+$renderer public/index.md -o dist/index.html --include-before-body="$background"

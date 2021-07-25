@@ -3,5 +3,5 @@
 dist
 
 # ignore all the executables
-/pandoc
-/sass
+/src/pandoc
+/src/sass
