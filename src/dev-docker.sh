@@ -1,22 +1,12 @@
 #!/bin/bash
 
-# Docker: Debian (Buster)
-
-# non-root user UID:GID
-uid=${uid:-"1000"}
-gid=${gid:-"1000"}
-
 SRC_DIR="${BASH_SOURCE%/*}"
 
-apt-get update
-apt-get install -y curl
+# add local installation binaries to PATH
+PATH="/home/$USER/.local/bin:$PATH"
 
-# install file watcher package
-apt-get install -y inotify-tools
+# install Python watcher package if it is not installed
+python3 -m pip list | grep httpwatcher || python3 -m pip install httpwatcher
 
-# create a user without a password
-addgroup --gid "$gid" user
-adduser --disabled-password --gecos '' --uid "$uid" --gid "$gid" user
-
-# run the rest of this script as that user
-su - user $SRC_DIR/dev-docker-user.sh
+# run standard dev script
+$SRC_DIR/dev.sh
