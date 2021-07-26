@@ -1,10 +1,22 @@
 version: '3.8'
 
 services:
+
   dev:
     image: 'python:3.9-slim-buster'
     working_dir: '/wrk'
-    entrypoint: '/wrk/src/dev-docker.sh /wrk/src/dev.sh'
+    entrypoint: '/wrk/src/dev-docker.sh'
     volumes:
       - './:/wrk'
     network_mode: host
+    environment:
+      - uid
+      - gid
+
+  prod:
+    image: 'python:3.9-slim-buster'
+    working_dir: '/wrk'
+    entrypoint: '/wrk/src/build.sh'
+    volumes:
+      - './:/wrk'
+    user: '${uid}:${gid}'

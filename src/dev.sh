@@ -1,23 +1,15 @@
 #!/bin/bash
 
+SRC_DIR="${BASH_SOURCE%/*}"
+WRK_DIR="${SRC_DIR%/*}"
+
+
 # clean up after exit
 function finish() {
     kill 0
 }
 trap finish EXIT
 
-
-SRC_DIR="${BASH_SOURCE%/*}"
-DIR="${SRC_DIR%/*}"
-
-# environment: root repository directory
-cd $DIR
-
-# validate environment
-if [ $(find . -type d | egrep -c -- 'src|public') -ne 2 ]; then
-    printf '\033[1m%s\033[0m\n' 'directory structure is invalid'
-    exit 1
-fi
 
 # check if necessary tools are installed
 command -v inotifywait >/dev/null
@@ -33,11 +25,17 @@ if [ "$?" -ne 0 ]; then
     exit 1
 fi
 
-# the default build script
-BUILD="$SRC_DIR/build.sh"
+
+# environment: root repository directory
+cd $WRK_DIR
+
+# prepare
+$SRC_DIR/prebuild.sh
+
+RENDER="$SRC_DIR/render.sh"
 
 # initialise
-$BUILD
+$RENDER
 
 # keep rebuilding on every file change
 (
@@ -48,7 +46,7 @@ $BUILD
         -e DELETE \
         | while read c; do
             echo "$c"
-            $BUILD
+            $RENDER
         done
 ) &
 
@@ -58,7 +56,3 @@ httpwatcher \
     --host "${HOST:-localhost}" \
     --port 4200 \
     --no-browser
-
-if [ $? -eq 143 ]; then
-    exit 0
-fi

@@ -19,17 +19,8 @@ jobs:
           path: 'dist'
           ref: 'gh-pages'
 
-      - name: 'Download Pandoc'
-        shell: bash
-        run: .github/workflows/download-pandoc.sh
-
-      - name: 'Download Sass'
-        shell: bash
-        run: .github/workflows/download-sass.sh
-
       - name: 'Render the website'
-        shell: bash
-        run: ./build.sh
+        run: ./prod
 
       - name: 'Get current time'
         uses: gerred/current-time@v1.0.0
