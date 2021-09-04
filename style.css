@@ -1,68 +1,46 @@
-body {
-  font-family: "Merriweather", serif;
-  color: #b4b3b1;
-  background-color: #2f3031;
-}
-
-a,
-a:visited {
-  text-decoration: none;
-  color: #0da5ec;
-}
-
-code {
-  font-family: "Fira Code", monospace;
-}
-
-img {
-  max-width: 100%;
-}
-
 @keyframes bg-movement-one {
   0% {
-    transform: rotate(45deg) translate(0, 150vh, 0);
+    transform: rotate(45deg) translateY(150vh);
   }
   100% {
-    transform: rotate(45deg) translate(0, -150vh, 0);
+    transform: rotate(45deg) translateY(-150vh);
   }
 }
 @keyframes bg-movement-two {
   0% {
-    transform: rotate(45deg) translate(0, 0vh, 0);
+    transform: rotate(45deg) translateY(0vh);
   }
   50% {
-    transform: rotate(45deg) translate(0, -150vh, 0);
+    transform: rotate(45deg) translateY(-150vh);
     opacity: 1;
   }
   51% {
-    transform: rotate(45deg) translate(0, -150vh, 0);
+    transform: rotate(45deg) translateY(-150vh);
     opacity: 0;
   }
   52% {
-    transform: rotate(45deg) translate(0, 150vh, 0);
+    transform: rotate(45deg) translateY(150vh);
     opacity: 0;
   }
   53% {
-    transform: rotate(45deg) translate(0, 150vh, 0);
+    transform: rotate(45deg) translateY(150vh);
     opacity: 1;
   }
   100% {
-    transform: rotate(45deg) translate(0, 0vh, 0);
+    transform: rotate(45deg) translateY(0vh);
   }
 }
 .background {
   position: fixed;
-  left: -25vh;
-  top: -25vh;
+  left: min(-25vh, -25vw);
+  top: min(-25vh, -25vw);
   z-index: -1;
-  width: 150vw;
-  height: 150vh;
+  width: max(150vw, 150vh);
+  height: max(150vw, 150vh);
   animation-name: bg-movement-one;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   transform-origin: center center;
-  animation: none;
-  transform: rotate(45deg);
 }
 .background.two {
   animation-name: bg-movement-two;
@@ -96,609 +74,2426 @@ img {
   height: 32px;
   box-shadow: inset 0 32px 16px -24px rgba(255, 255, 255, 0.05);
 }
-.background.slow > .background-particle:nth-child(1) {
-  top: 88%;
-  left: 16%;
-}
-.background.slow > .background-particle:nth-child(2) {
-  top: 60%;
-  left: 21%;
-}
-.background.slow > .background-particle:nth-child(3) {
-  top: 86%;
-  left: 92%;
-}
-.background.slow > .background-particle:nth-child(4) {
-  top: 41%;
-  left: 12%;
-}
-.background.slow > .background-particle:nth-child(5) {
-  top: 31%;
-  left: 11%;
-}
-.background.slow > .background-particle:nth-child(6) {
-  top: 15%;
-  left: 69%;
-}
-.background.slow > .background-particle:nth-child(7) {
-  top: 38%;
-  left: 24%;
-}
-.background.slow > .background-particle:nth-child(8) {
-  top: 27%;
-  left: 39%;
-}
-.background.slow > .background-particle:nth-child(9) {
+.background.one.slow > .background-particle:nth-child(1) {
   top: 11%;
-  left: 19%;
-}
-.background.slow > .background-particle:nth-child(10) {
-  top: 39%;
-  left: 11%;
-}
-.background.slow > .background-particle:nth-child(11) {
-  top: 31%;
-  left: 1%;
-}
-.background.slow > .background-particle:nth-child(12) {
-  top: 48%;
-  left: 96%;
-}
-.background.slow > .background-particle:nth-child(13) {
-  top: 23%;
-  left: 34%;
-}
-.background.slow > .background-particle:nth-child(14) {
-  top: 92%;
-  left: 97%;
-}
-.background.slow > .background-particle:nth-child(15) {
-  top: 66%;
-  left: 69%;
-}
-.background.slow > .background-particle:nth-child(16) {
-  top: 30%;
-  left: 33%;
-}
-.background.slow > .background-particle:nth-child(17) {
-  top: 53%;
-  left: 77%;
-}
-.background.slow > .background-particle:nth-child(18) {
-  top: 44%;
-  left: 27%;
-}
-.background.slow > .background-particle:nth-child(19) {
-  top: 46%;
-  left: 7%;
-}
-.background.slow > .background-particle:nth-child(20) {
-  top: 72%;
-  left: 77%;
-}
-.background.slow > .background-particle:nth-child(21) {
-  top: 69%;
-  left: 40%;
-}
-.background.slow > .background-particle:nth-child(22) {
-  top: 74%;
-  left: 25%;
-}
-.background.slow > .background-particle:nth-child(23) {
-  top: 64%;
-  left: 16%;
-}
-.background.slow > .background-particle:nth-child(24) {
-  top: 41%;
-  left: 47%;
-}
-.background.slow > .background-particle:nth-child(25) {
-  top: 30%;
-  left: 42%;
-}
-.background.slow > .background-particle:nth-child(26) {
-  top: 76%;
-  left: 47%;
-}
-.background.slow > .background-particle:nth-child(27) {
-  top: 82%;
   left: 73%;
 }
-.background.slow > .background-particle:nth-child(28) {
-  top: 6%;
-  left: 82%;
+.background.one.slow > .background-particle:nth-child(2) {
+  top: 20%;
+  left: 41%;
 }
-.background.slow > .background-particle:nth-child(29) {
-  top: 77%;
-  left: 97%;
+.background.one.slow > .background-particle:nth-child(3) {
+  top: 31%;
+  left: 66%;
 }
-.background.slow > .background-particle:nth-child(30) {
-  top: 15%;
-  left: 36%;
+.background.one.slow > .background-particle:nth-child(4) {
+  top: 37%;
+  left: 3%;
 }
-.background.slow > .background-particle:nth-child(31) {
-  top: 47%;
-  left: 49%;
-}
-.background.slow > .background-particle:nth-child(32) {
-  top: 83%;
+.background.one.slow > .background-particle:nth-child(5) {
+  top: 98%;
   left: 59%;
 }
-.background.slow > .background-particle:nth-child(33) {
-  top: 100%;
-  left: 7%;
+.background.one.slow > .background-particle:nth-child(6) {
+  top: 43%;
+  left: 26%;
 }
-.background.slow > .background-particle:nth-child(34) {
-  top: 16%;
-  left: 18%;
+.background.one.slow > .background-particle:nth-child(7) {
+  top: 70%;
+  left: 59%;
 }
-.background.slow > .background-particle:nth-child(35) {
-  top: 33%;
-  left: 50%;
+.background.one.slow > .background-particle:nth-child(8) {
+  top: 83%;
+  left: 66%;
 }
-.background.slow > .background-particle:nth-child(36) {
-  top: 11%;
-  left: 9%;
+.background.one.slow > .background-particle:nth-child(9) {
+  top: 50%;
+  left: 11%;
 }
-.background.slow > .background-particle:nth-child(37) {
-  top: 81%;
-  left: 49%;
-}
-.background.slow > .background-particle:nth-child(38) {
-  top: 27%;
-  left: 4%;
-}
-.background.slow > .background-particle:nth-child(39) {
-  top: 7%;
-  left: 6%;
-}
-.background.slow > .background-particle:nth-child(40) {
-  top: 27%;
-  left: 13%;
-}
-.background.slow > .background-particle:nth-child(41) {
-  top: 13%;
-  left: 93%;
-}
-.background.slow > .background-particle:nth-child(42) {
-  top: 19%;
-  left: 67%;
-}
-.background.slow > .background-particle:nth-child(43) {
-  top: 98%;
-  left: 68%;
-}
-.background.slow > .background-particle:nth-child(44) {
-  top: 67%;
-  left: 96%;
-}
-.background.slow > .background-particle:nth-child(45) {
-  top: 35%;
-  left: 72%;
-}
-.background.slow > .background-particle:nth-child(46) {
-  top: 30%;
-  left: 31%;
-}
-.background.slow > .background-particle:nth-child(47) {
-  top: 52%;
-  left: 19%;
-}
-.background.slow > .background-particle:nth-child(48) {
-  top: 1%;
-  left: 53%;
-}
-.background.slow > .background-particle:nth-child(49) {
-  top: 92%;
-  left: 78%;
-}
-.background.slow > .background-particle:nth-child(50) {
-  top: 69%;
-  left: 72%;
-}
-.background.medium > .background-particle:nth-child(1) {
-  top: 67%;
-  left: 34%;
-}
-.background.medium > .background-particle:nth-child(2) {
-  top: 10%;
-  left: 31%;
-}
-.background.medium > .background-particle:nth-child(3) {
-  top: 67%;
-  left: 47%;
-}
-.background.medium > .background-particle:nth-child(4) {
-  top: 60%;
+.background.one.slow > .background-particle:nth-child(10) {
+  top: 6%;
   left: 35%;
 }
-.background.medium > .background-particle:nth-child(5) {
-  top: 27%;
-  left: 10%;
+.background.one.slow > .background-particle:nth-child(11) {
+  top: 20%;
+  left: 5%;
 }
-.background.medium > .background-particle:nth-child(6) {
-  top: 22%;
-  left: 82%;
+.background.one.slow > .background-particle:nth-child(12) {
+  top: 73%;
+  left: 39%;
 }
-.background.medium > .background-particle:nth-child(7) {
+.background.one.slow > .background-particle:nth-child(13) {
+  top: 24%;
+  left: 50%;
+}
+.background.one.slow > .background-particle:nth-child(14) {
+  top: 94%;
+  left: 68%;
+}
+.background.one.slow > .background-particle:nth-child(15) {
+  top: 6%;
+  left: 76%;
+}
+.background.one.slow > .background-particle:nth-child(16) {
+  top: 25%;
+  left: 21%;
+}
+.background.one.slow > .background-particle:nth-child(17) {
+  top: 94%;
+  left: 30%;
+}
+.background.one.slow > .background-particle:nth-child(18) {
+  top: 58%;
+  left: 97%;
+}
+.background.one.slow > .background-particle:nth-child(19) {
+  top: 30%;
+  left: 34%;
+}
+.background.one.slow > .background-particle:nth-child(20) {
+  top: 33%;
+  left: 38%;
+}
+.background.one.slow > .background-particle:nth-child(21) {
   top: 47%;
-  left: 64%;
+  left: 86%;
 }
-.background.medium > .background-particle:nth-child(8) {
-  top: 46%;
+.background.one.slow > .background-particle:nth-child(22) {
+  top: 32%;
+  left: 21%;
+}
+.background.one.slow > .background-particle:nth-child(23) {
+  top: 97%;
+  left: 3%;
+}
+.background.one.slow > .background-particle:nth-child(24) {
+  top: 9%;
+  left: 14%;
+}
+.background.one.slow > .background-particle:nth-child(25) {
+  top: 90%;
+  left: 56%;
+}
+.background.one.slow > .background-particle:nth-child(26) {
+  top: 65%;
   left: 42%;
 }
-.background.medium > .background-particle:nth-child(9) {
-  top: 33%;
-  left: 25%;
+.background.one.slow > .background-particle:nth-child(27) {
+  top: 84%;
+  left: 78%;
 }
-.background.medium > .background-particle:nth-child(10) {
-  top: 55%;
-  left: 98%;
+.background.one.slow > .background-particle:nth-child(28) {
+  top: 18%;
+  left: 57%;
 }
-.background.medium > .background-particle:nth-child(11) {
-  top: 87%;
+.background.one.slow > .background-particle:nth-child(29) {
+  top: 88%;
+  left: 4%;
+}
+.background.one.slow > .background-particle:nth-child(30) {
+  top: 71%;
+  left: 31%;
+}
+.background.one.slow > .background-particle:nth-child(31) {
+  top: 22%;
+  left: 56%;
+}
+.background.one.slow > .background-particle:nth-child(32) {
+  top: 54%;
   left: 43%;
 }
-.background.medium > .background-particle:nth-child(12) {
-  top: 67%;
+.background.one.slow > .background-particle:nth-child(33) {
+  top: 95%;
+  left: 88%;
+}
+.background.one.slow > .background-particle:nth-child(34) {
+  top: 92%;
+  left: 17%;
+}
+.background.one.slow > .background-particle:nth-child(35) {
+  top: 21%;
+  left: 69%;
+}
+.background.one.slow > .background-particle:nth-child(36) {
+  top: 46%;
+  left: 37%;
+}
+.background.one.slow > .background-particle:nth-child(37) {
+  top: 42%;
+  left: 84%;
+}
+.background.one.slow > .background-particle:nth-child(38) {
+  top: 83%;
+  left: 49%;
+}
+.background.one.slow > .background-particle:nth-child(39) {
+  top: 33%;
+  left: 26%;
+}
+.background.one.slow > .background-particle:nth-child(40) {
+  top: 8%;
+  left: 2%;
+}
+.background.one.slow > .background-particle:nth-child(41) {
+  top: 32%;
+  left: 66%;
+}
+.background.one.slow > .background-particle:nth-child(42) {
+  top: 45%;
+  left: 80%;
+}
+.background.one.slow > .background-particle:nth-child(43) {
+  top: 11%;
+  left: 19%;
+}
+.background.one.slow > .background-particle:nth-child(44) {
+  top: 1%;
+  left: 34%;
+}
+.background.one.slow > .background-particle:nth-child(45) {
+  top: 62%;
+  left: 43%;
+}
+.background.one.slow > .background-particle:nth-child(46) {
+  top: 99%;
+  left: 40%;
+}
+.background.one.slow > .background-particle:nth-child(47) {
+  top: 3%;
+  left: 28%;
+}
+.background.one.slow > .background-particle:nth-child(48) {
+  top: 48%;
+  left: 51%;
+}
+.background.one.slow > .background-particle:nth-child(49) {
+  top: 61%;
+  left: 47%;
+}
+.background.one.slow > .background-particle:nth-child(50) {
+  top: 1%;
+  left: 64%;
+}
+.background.one.slow > .background-particle:nth-child(51) {
+  top: 37%;
+  left: 57%;
+}
+.background.one.slow > .background-particle:nth-child(52) {
+  top: 14%;
+  left: 63%;
+}
+.background.one.slow > .background-particle:nth-child(53) {
+  top: 80%;
+  left: 68%;
+}
+.background.one.slow > .background-particle:nth-child(54) {
+  top: 30%;
   left: 16%;
 }
-.background.medium > .background-particle:nth-child(13) {
+.background.one.slow > .background-particle:nth-child(55) {
+  top: 62%;
+  left: 44%;
+}
+.background.one.slow > .background-particle:nth-child(56) {
+  top: 5%;
+  left: 62%;
+}
+.background.one.slow > .background-particle:nth-child(57) {
+  top: 48%;
+  left: 27%;
+}
+.background.one.slow > .background-particle:nth-child(58) {
+  top: 9%;
+  left: 8%;
+}
+.background.one.slow > .background-particle:nth-child(59) {
+  top: 51%;
+  left: 74%;
+}
+.background.one.slow > .background-particle:nth-child(60) {
+  top: 59%;
+  left: 22%;
+}
+.background.one.slow > .background-particle:nth-child(61) {
+  top: 23%;
+  left: 46%;
+}
+.background.one.slow > .background-particle:nth-child(62) {
+  top: 43%;
+  left: 14%;
+}
+.background.one.slow > .background-particle:nth-child(63) {
+  top: 16%;
+  left: 24%;
+}
+.background.one.slow > .background-particle:nth-child(64) {
+  top: 15%;
+  left: 29%;
+}
+.background.one.slow > .background-particle:nth-child(65) {
+  top: 63%;
+  left: 56%;
+}
+.background.one.slow > .background-particle:nth-child(66) {
+  top: 72%;
+  left: 38%;
+}
+.background.one.slow > .background-particle:nth-child(67) {
+  top: 73%;
+  left: 9%;
+}
+.background.one.slow > .background-particle:nth-child(68) {
+  top: 86%;
+  left: 64%;
+}
+.background.one.slow > .background-particle:nth-child(69) {
+  top: 55%;
+  left: 78%;
+}
+.background.one.slow > .background-particle:nth-child(70) {
+  top: 29%;
+  left: 15%;
+}
+.background.one.slow > .background-particle:nth-child(71) {
+  top: 44%;
+  left: 6%;
+}
+.background.one.slow > .background-particle:nth-child(72) {
+  top: 84%;
+  left: 23%;
+}
+.background.one.slow > .background-particle:nth-child(73) {
+  top: 68%;
+  left: 12%;
+}
+.background.one.slow > .background-particle:nth-child(74) {
+  top: 66%;
+  left: 83%;
+}
+.background.one.slow > .background-particle:nth-child(75) {
+  top: 80%;
+  left: 64%;
+}
+.background.one.slow > .background-particle:nth-child(76) {
+  top: 100%;
+  left: 15%;
+}
+.background.one.slow > .background-particle:nth-child(77) {
+  top: 13%;
+  left: 67%;
+}
+.background.one.slow > .background-particle:nth-child(78) {
+  top: 1%;
+  left: 10%;
+}
+.background.one.slow > .background-particle:nth-child(79) {
+  top: 15%;
+  left: 46%;
+}
+.background.one.slow > .background-particle:nth-child(80) {
+  top: 12%;
+  left: 71%;
+}
+.background.one.slow > .background-particle:nth-child(81) {
+  top: 6%;
+  left: 18%;
+}
+.background.one.slow > .background-particle:nth-child(82) {
+  top: 20%;
+  left: 86%;
+}
+.background.one.slow > .background-particle:nth-child(83) {
+  top: 78%;
+  left: 89%;
+}
+.background.one.slow > .background-particle:nth-child(84) {
+  top: 15%;
+  left: 68%;
+}
+.background.one.slow > .background-particle:nth-child(85) {
+  top: 30%;
+  left: 89%;
+}
+.background.one.slow > .background-particle:nth-child(86) {
+  top: 69%;
+  left: 92%;
+}
+.background.one.slow > .background-particle:nth-child(87) {
+  top: 82%;
+  left: 32%;
+}
+.background.one.slow > .background-particle:nth-child(88) {
+  top: 98%;
+  left: 62%;
+}
+.background.one.slow > .background-particle:nth-child(89) {
+  top: 81%;
+  left: 83%;
+}
+.background.one.slow > .background-particle:nth-child(90) {
+  top: 4%;
+  left: 96%;
+}
+.background.one.slow > .background-particle:nth-child(91) {
+  top: 36%;
+  left: 51%;
+}
+.background.one.slow > .background-particle:nth-child(92) {
+  top: 67%;
+  left: 52%;
+}
+.background.one.slow > .background-particle:nth-child(93) {
+  top: 71%;
+  left: 51%;
+}
+.background.one.slow > .background-particle:nth-child(94) {
+  top: 68%;
+  left: 73%;
+}
+.background.one.slow > .background-particle:nth-child(95) {
+  top: 23%;
+  left: 23%;
+}
+.background.one.slow > .background-particle:nth-child(96) {
+  top: 82%;
+  left: 32%;
+}
+.background.one.slow > .background-particle:nth-child(97) {
+  top: 7%;
+  left: 48%;
+}
+.background.one.slow > .background-particle:nth-child(98) {
+  top: 84%;
+  left: 45%;
+}
+.background.one.slow > .background-particle:nth-child(99) {
+  top: 63%;
+  left: 17%;
+}
+.background.one.slow > .background-particle:nth-child(100) {
+  top: 41%;
+  left: 60%;
+}
+.background.one.medium > .background-particle:nth-child(1) {
+  top: 23%;
+  left: 69%;
+}
+.background.one.medium > .background-particle:nth-child(2) {
+  top: 43%;
+  left: 16%;
+}
+.background.one.medium > .background-particle:nth-child(3) {
+  top: 18%;
+  left: 25%;
+}
+.background.one.medium > .background-particle:nth-child(4) {
+  top: 24%;
+  left: 13%;
+}
+.background.one.medium > .background-particle:nth-child(5) {
+  top: 70%;
+  left: 77%;
+}
+.background.one.medium > .background-particle:nth-child(6) {
+  top: 41%;
+  left: 95%;
+}
+.background.one.medium > .background-particle:nth-child(7) {
+  top: 78%;
+  left: 53%;
+}
+.background.one.medium > .background-particle:nth-child(8) {
+  top: 83%;
+  left: 52%;
+}
+.background.one.medium > .background-particle:nth-child(9) {
+  top: 38%;
+  left: 86%;
+}
+.background.one.medium > .background-particle:nth-child(10) {
+  top: 88%;
+  left: 3%;
+}
+.background.one.medium > .background-particle:nth-child(11) {
+  top: 21%;
+  left: 44%;
+}
+.background.one.medium > .background-particle:nth-child(12) {
+  top: 9%;
+  left: 7%;
+}
+.background.one.medium > .background-particle:nth-child(13) {
+  top: 32%;
+  left: 99%;
+}
+.background.one.medium > .background-particle:nth-child(14) {
+  top: 54%;
+  left: 49%;
+}
+.background.one.medium > .background-particle:nth-child(15) {
+  top: 44%;
+  left: 31%;
+}
+.background.one.medium > .background-particle:nth-child(16) {
+  top: 24%;
+  left: 1%;
+}
+.background.one.medium > .background-particle:nth-child(17) {
+  top: 36%;
+  left: 61%;
+}
+.background.one.medium > .background-particle:nth-child(18) {
+  top: 15%;
+  left: 62%;
+}
+.background.one.medium > .background-particle:nth-child(19) {
+  top: 46%;
+  left: 51%;
+}
+.background.one.medium > .background-particle:nth-child(20) {
+  top: 18%;
+  left: 51%;
+}
+.background.one.medium > .background-particle:nth-child(21) {
+  top: 34%;
+  left: 14%;
+}
+.background.one.medium > .background-particle:nth-child(22) {
+  top: 99%;
+  left: 94%;
+}
+.background.one.medium > .background-particle:nth-child(23) {
+  top: 14%;
+  left: 64%;
+}
+.background.one.medium > .background-particle:nth-child(24) {
+  top: 13%;
+  left: 95%;
+}
+.background.one.medium > .background-particle:nth-child(25) {
+  top: 34%;
+  left: 26%;
+}
+.background.one.medium > .background-particle:nth-child(26) {
+  top: 50%;
+  left: 73%;
+}
+.background.one.medium > .background-particle:nth-child(27) {
+  top: 59%;
+  left: 88%;
+}
+.background.one.medium > .background-particle:nth-child(28) {
+  top: 18%;
+  left: 10%;
+}
+.background.one.medium > .background-particle:nth-child(29) {
+  top: 36%;
+  left: 73%;
+}
+.background.one.medium > .background-particle:nth-child(30) {
+  top: 4%;
+  left: 37%;
+}
+.background.one.medium > .background-particle:nth-child(31) {
+  top: 10%;
+  left: 38%;
+}
+.background.one.medium > .background-particle:nth-child(32) {
+  top: 26%;
+  left: 65%;
+}
+.background.one.medium > .background-particle:nth-child(33) {
+  top: 37%;
+  left: 4%;
+}
+.background.one.medium > .background-particle:nth-child(34) {
+  top: 11%;
+  left: 36%;
+}
+.background.one.medium > .background-particle:nth-child(35) {
+  top: 49%;
+  left: 33%;
+}
+.background.one.medium > .background-particle:nth-child(36) {
+  top: 16%;
+  left: 28%;
+}
+.background.one.medium > .background-particle:nth-child(37) {
+  top: 52%;
+  left: 82%;
+}
+.background.one.medium > .background-particle:nth-child(38) {
+  top: 12%;
+  left: 52%;
+}
+.background.one.medium > .background-particle:nth-child(39) {
+  top: 91%;
+  left: 21%;
+}
+.background.one.medium > .background-particle:nth-child(40) {
+  top: 50%;
+  left: 10%;
+}
+.background.one.medium > .background-particle:nth-child(41) {
+  top: 30%;
+  left: 100%;
+}
+.background.one.medium > .background-particle:nth-child(42) {
+  top: 1%;
+  left: 79%;
+}
+.background.one.medium > .background-particle:nth-child(43) {
+  top: 51%;
+  left: 88%;
+}
+.background.one.medium > .background-particle:nth-child(44) {
+  top: 50%;
+  left: 3%;
+}
+.background.one.medium > .background-particle:nth-child(45) {
+  top: 56%;
+  left: 69%;
+}
+.background.one.medium > .background-particle:nth-child(46) {
+  top: 78%;
+  left: 70%;
+}
+.background.one.medium > .background-particle:nth-child(47) {
+  top: 10%;
+  left: 2%;
+}
+.background.one.medium > .background-particle:nth-child(48) {
+  top: 88%;
+  left: 59%;
+}
+.background.one.medium > .background-particle:nth-child(49) {
+  top: 12%;
+  left: 90%;
+}
+.background.one.medium > .background-particle:nth-child(50) {
+  top: 33%;
+  left: 96%;
+}
+.background.one.medium > .background-particle:nth-child(51) {
+  top: 38%;
+  left: 39%;
+}
+.background.one.medium > .background-particle:nth-child(52) {
+  top: 74%;
+  left: 28%;
+}
+.background.one.medium > .background-particle:nth-child(53) {
+  top: 100%;
+  left: 41%;
+}
+.background.one.medium > .background-particle:nth-child(54) {
+  top: 82%;
+  left: 15%;
+}
+.background.one.medium > .background-particle:nth-child(55) {
+  top: 13%;
+  left: 98%;
+}
+.background.one.medium > .background-particle:nth-child(56) {
+  top: 100%;
+  left: 13%;
+}
+.background.one.medium > .background-particle:nth-child(57) {
+  top: 17%;
+  left: 76%;
+}
+.background.one.medium > .background-particle:nth-child(58) {
+  top: 74%;
+  left: 88%;
+}
+.background.one.medium > .background-particle:nth-child(59) {
+  top: 6%;
+  left: 88%;
+}
+.background.one.medium > .background-particle:nth-child(60) {
+  top: 67%;
+  left: 60%;
+}
+.background.one.medium > .background-particle:nth-child(61) {
+  top: 28%;
+  left: 66%;
+}
+.background.one.medium > .background-particle:nth-child(62) {
+  top: 32%;
+  left: 96%;
+}
+.background.one.medium > .background-particle:nth-child(63) {
+  top: 46%;
+  left: 32%;
+}
+.background.one.medium > .background-particle:nth-child(64) {
+  top: 93%;
+  left: 83%;
+}
+.background.one.medium > .background-particle:nth-child(65) {
+  top: 73%;
+  left: 79%;
+}
+.background.one.medium > .background-particle:nth-child(66) {
+  top: 2%;
+  left: 52%;
+}
+.background.one.medium > .background-particle:nth-child(67) {
+  top: 32%;
+  left: 18%;
+}
+.background.one.medium > .background-particle:nth-child(68) {
+  top: 40%;
+  left: 80%;
+}
+.background.one.medium > .background-particle:nth-child(69) {
+  top: 74%;
+  left: 12%;
+}
+.background.one.medium > .background-particle:nth-child(70) {
+  top: 94%;
+  left: 71%;
+}
+.background.one.medium > .background-particle:nth-child(71) {
+  top: 66%;
+  left: 35%;
+}
+.background.one.medium > .background-particle:nth-child(72) {
+  top: 67%;
+  left: 24%;
+}
+.background.one.medium > .background-particle:nth-child(73) {
+  top: 69%;
+  left: 97%;
+}
+.background.one.medium > .background-particle:nth-child(74) {
+  top: 68%;
+  left: 43%;
+}
+.background.one.medium > .background-particle:nth-child(75) {
+  top: 33%;
+  left: 9%;
+}
+.background.one.medium > .background-particle:nth-child(76) {
+  top: 93%;
+  left: 27%;
+}
+.background.one.medium > .background-particle:nth-child(77) {
+  top: 93%;
+  left: 24%;
+}
+.background.one.medium > .background-particle:nth-child(78) {
+  top: 29%;
+  left: 44%;
+}
+.background.one.medium > .background-particle:nth-child(79) {
+  top: 35%;
+  left: 41%;
+}
+.background.one.medium > .background-particle:nth-child(80) {
+  top: 16%;
+  left: 63%;
+}
+.background.one.medium > .background-particle:nth-child(81) {
+  top: 39%;
+  left: 74%;
+}
+.background.one.medium > .background-particle:nth-child(82) {
+  top: 19%;
+  left: 64%;
+}
+.background.one.medium > .background-particle:nth-child(83) {
+  top: 29%;
+  left: 44%;
+}
+.background.one.medium > .background-particle:nth-child(84) {
+  top: 11%;
+  left: 90%;
+}
+.background.one.medium > .background-particle:nth-child(85) {
+  top: 22%;
+  left: 26%;
+}
+.background.one.medium > .background-particle:nth-child(86) {
+  top: 17%;
+  left: 50%;
+}
+.background.one.medium > .background-particle:nth-child(87) {
+  top: 13%;
+  left: 82%;
+}
+.background.one.medium > .background-particle:nth-child(88) {
+  top: 55%;
+  left: 92%;
+}
+.background.one.medium > .background-particle:nth-child(89) {
+  top: 26%;
+  left: 60%;
+}
+.background.one.medium > .background-particle:nth-child(90) {
+  top: 40%;
+  left: 66%;
+}
+.background.one.medium > .background-particle:nth-child(91) {
+  top: 29%;
+  left: 46%;
+}
+.background.one.medium > .background-particle:nth-child(92) {
+  top: 8%;
+  left: 4%;
+}
+.background.one.medium > .background-particle:nth-child(93) {
+  top: 56%;
+  left: 96%;
+}
+.background.one.medium > .background-particle:nth-child(94) {
+  top: 94%;
+  left: 15%;
+}
+.background.one.medium > .background-particle:nth-child(95) {
+  top: 20%;
+  left: 50%;
+}
+.background.one.medium > .background-particle:nth-child(96) {
+  top: 17%;
+  left: 80%;
+}
+.background.one.medium > .background-particle:nth-child(97) {
+  top: 91%;
+  left: 33%;
+}
+.background.one.medium > .background-particle:nth-child(98) {
+  top: 51%;
+  left: 54%;
+}
+.background.one.medium > .background-particle:nth-child(99) {
+  top: 76%;
+  left: 94%;
+}
+.background.one.medium > .background-particle:nth-child(100) {
+  top: 54%;
+  left: 37%;
+}
+.background.one.fast > .background-particle:nth-child(1) {
+  top: 79%;
+  left: 75%;
+}
+.background.one.fast > .background-particle:nth-child(2) {
+  top: 55%;
+  left: 12%;
+}
+.background.one.fast > .background-particle:nth-child(3) {
+  top: 100%;
+  left: 49%;
+}
+.background.one.fast > .background-particle:nth-child(4) {
+  top: 83%;
+  left: 20%;
+}
+.background.one.fast > .background-particle:nth-child(5) {
+  top: 95%;
+  left: 22%;
+}
+.background.one.fast > .background-particle:nth-child(6) {
+  top: 7%;
+  left: 99%;
+}
+.background.one.fast > .background-particle:nth-child(7) {
+  top: 44%;
+  left: 28%;
+}
+.background.one.fast > .background-particle:nth-child(8) {
+  top: 58%;
+  left: 51%;
+}
+.background.one.fast > .background-particle:nth-child(9) {
+  top: 56%;
+  left: 75%;
+}
+.background.one.fast > .background-particle:nth-child(10) {
+  top: 36%;
+  left: 34%;
+}
+.background.one.fast > .background-particle:nth-child(11) {
+  top: 36%;
+  left: 40%;
+}
+.background.one.fast > .background-particle:nth-child(12) {
+  top: 44%;
+  left: 76%;
+}
+.background.one.fast > .background-particle:nth-child(13) {
+  top: 58%;
+  left: 26%;
+}
+.background.one.fast > .background-particle:nth-child(14) {
+  top: 36%;
+  left: 78%;
+}
+.background.one.fast > .background-particle:nth-child(15) {
+  top: 71%;
+  left: 22%;
+}
+.background.one.fast > .background-particle:nth-child(16) {
+  top: 22%;
+  left: 23%;
+}
+.background.one.fast > .background-particle:nth-child(17) {
+  top: 4%;
+  left: 81%;
+}
+.background.one.fast > .background-particle:nth-child(18) {
+  top: 63%;
+  left: 1%;
+}
+.background.one.fast > .background-particle:nth-child(19) {
+  top: 20%;
+  left: 73%;
+}
+.background.one.fast > .background-particle:nth-child(20) {
+  top: 59%;
+  left: 33%;
+}
+.background.one.fast > .background-particle:nth-child(21) {
+  top: 57%;
+  left: 16%;
+}
+.background.one.fast > .background-particle:nth-child(22) {
+  top: 31%;
+  left: 22%;
+}
+.background.one.fast > .background-particle:nth-child(23) {
+  top: 20%;
+  left: 12%;
+}
+.background.one.fast > .background-particle:nth-child(24) {
+  top: 2%;
+  left: 30%;
+}
+.background.one.fast > .background-particle:nth-child(25) {
+  top: 93%;
+  left: 70%;
+}
+.background.one.fast > .background-particle:nth-child(26) {
+  top: 67%;
+  left: 18%;
+}
+.background.one.fast > .background-particle:nth-child(27) {
+  top: 10%;
+  left: 34%;
+}
+.background.one.fast > .background-particle:nth-child(28) {
+  top: 96%;
+  left: 83%;
+}
+.background.one.fast > .background-particle:nth-child(29) {
+  top: 39%;
+  left: 59%;
+}
+.background.one.fast > .background-particle:nth-child(30) {
+  top: 91%;
+  left: 46%;
+}
+.background.one.fast > .background-particle:nth-child(31) {
+  top: 34%;
+  left: 27%;
+}
+.background.one.fast > .background-particle:nth-child(32) {
+  top: 32%;
+  left: 90%;
+}
+.background.one.fast > .background-particle:nth-child(33) {
+  top: 94%;
+  left: 23%;
+}
+.background.one.fast > .background-particle:nth-child(34) {
+  top: 88%;
+  left: 98%;
+}
+.background.one.fast > .background-particle:nth-child(35) {
+  top: 87%;
+  left: 93%;
+}
+.background.one.fast > .background-particle:nth-child(36) {
+  top: 4%;
+  left: 5%;
+}
+.background.one.fast > .background-particle:nth-child(37) {
+  top: 63%;
+  left: 31%;
+}
+.background.one.fast > .background-particle:nth-child(38) {
+  top: 98%;
+  left: 29%;
+}
+.background.one.fast > .background-particle:nth-child(39) {
+  top: 14%;
+  left: 22%;
+}
+.background.one.fast > .background-particle:nth-child(40) {
+  top: 65%;
+  left: 46%;
+}
+.background.one.fast > .background-particle:nth-child(41) {
+  top: 86%;
+  left: 13%;
+}
+.background.one.fast > .background-particle:nth-child(42) {
+  top: 10%;
+  left: 19%;
+}
+.background.one.fast > .background-particle:nth-child(43) {
+  top: 58%;
+  left: 12%;
+}
+.background.one.fast > .background-particle:nth-child(44) {
+  top: 54%;
+  left: 21%;
+}
+.background.one.fast > .background-particle:nth-child(45) {
+  top: 18%;
+  left: 11%;
+}
+.background.one.fast > .background-particle:nth-child(46) {
+  top: 91%;
+  left: 94%;
+}
+.background.one.fast > .background-particle:nth-child(47) {
+  top: 98%;
+  left: 43%;
+}
+.background.one.fast > .background-particle:nth-child(48) {
+  top: 74%;
+  left: 78%;
+}
+.background.one.fast > .background-particle:nth-child(49) {
+  top: 39%;
+  left: 63%;
+}
+.background.one.fast > .background-particle:nth-child(50) {
+  top: 38%;
+  left: 66%;
+}
+.background.one.fast > .background-particle:nth-child(51) {
+  top: 6%;
+  left: 14%;
+}
+.background.one.fast > .background-particle:nth-child(52) {
+  top: 85%;
+  left: 98%;
+}
+.background.one.fast > .background-particle:nth-child(53) {
+  top: 32%;
+  left: 90%;
+}
+.background.one.fast > .background-particle:nth-child(54) {
+  top: 16%;
+  left: 63%;
+}
+.background.one.fast > .background-particle:nth-child(55) {
+  top: 98%;
+  left: 33%;
+}
+.background.one.fast > .background-particle:nth-child(56) {
+  top: 66%;
+  left: 56%;
+}
+.background.one.fast > .background-particle:nth-child(57) {
+  top: 6%;
+  left: 38%;
+}
+.background.one.fast > .background-particle:nth-child(58) {
+  top: 7%;
+  left: 77%;
+}
+.background.one.fast > .background-particle:nth-child(59) {
+  top: 31%;
+  left: 14%;
+}
+.background.one.fast > .background-particle:nth-child(60) {
+  top: 74%;
+  left: 77%;
+}
+.background.one.fast > .background-particle:nth-child(61) {
+  top: 76%;
+  left: 68%;
+}
+.background.one.fast > .background-particle:nth-child(62) {
+  top: 93%;
+  left: 15%;
+}
+.background.one.fast > .background-particle:nth-child(63) {
+  top: 88%;
+  left: 8%;
+}
+.background.one.fast > .background-particle:nth-child(64) {
+  top: 38%;
+  left: 10%;
+}
+.background.one.fast > .background-particle:nth-child(65) {
+  top: 33%;
+  left: 70%;
+}
+.background.one.fast > .background-particle:nth-child(66) {
+  top: 29%;
+  left: 36%;
+}
+.background.one.fast > .background-particle:nth-child(67) {
+  top: 13%;
+  left: 82%;
+}
+.background.one.fast > .background-particle:nth-child(68) {
+  top: 24%;
+  left: 70%;
+}
+.background.one.fast > .background-particle:nth-child(69) {
+  top: 64%;
+  left: 60%;
+}
+.background.one.fast > .background-particle:nth-child(70) {
+  top: 46%;
+  left: 8%;
+}
+.background.one.fast > .background-particle:nth-child(71) {
+  top: 4%;
+  left: 85%;
+}
+.background.one.fast > .background-particle:nth-child(72) {
+  top: 8%;
+  left: 42%;
+}
+.background.one.fast > .background-particle:nth-child(73) {
+  top: 90%;
+  left: 66%;
+}
+.background.one.fast > .background-particle:nth-child(74) {
+  top: 44%;
+  left: 98%;
+}
+.background.one.fast > .background-particle:nth-child(75) {
+  top: 29%;
+  left: 88%;
+}
+.background.one.fast > .background-particle:nth-child(76) {
+  top: 90%;
+  left: 30%;
+}
+.background.one.fast > .background-particle:nth-child(77) {
+  top: 7%;
+  left: 5%;
+}
+.background.one.fast > .background-particle:nth-child(78) {
+  top: 36%;
+  left: 93%;
+}
+.background.one.fast > .background-particle:nth-child(79) {
+  top: 94%;
+  left: 95%;
+}
+.background.one.fast > .background-particle:nth-child(80) {
+  top: 41%;
+  left: 77%;
+}
+.background.one.fast > .background-particle:nth-child(81) {
+  top: 16%;
+  left: 8%;
+}
+.background.one.fast > .background-particle:nth-child(82) {
+  top: 80%;
+  left: 75%;
+}
+.background.one.fast > .background-particle:nth-child(83) {
+  top: 85%;
+  left: 72%;
+}
+.background.one.fast > .background-particle:nth-child(84) {
+  top: 51%;
+  left: 35%;
+}
+.background.one.fast > .background-particle:nth-child(85) {
+  top: 21%;
+  left: 46%;
+}
+.background.one.fast > .background-particle:nth-child(86) {
+  top: 71%;
+  left: 12%;
+}
+.background.one.fast > .background-particle:nth-child(87) {
+  top: 6%;
+  left: 32%;
+}
+.background.one.fast > .background-particle:nth-child(88) {
+  top: 38%;
+  left: 43%;
+}
+.background.one.fast > .background-particle:nth-child(89) {
+  top: 13%;
+  left: 61%;
+}
+.background.one.fast > .background-particle:nth-child(90) {
   top: 52%;
   left: 51%;
 }
-.background.medium > .background-particle:nth-child(14) {
+.background.one.fast > .background-particle:nth-child(91) {
+  top: 72%;
+  left: 93%;
+}
+.background.one.fast > .background-particle:nth-child(92) {
+  top: 34%;
+  left: 60%;
+}
+.background.one.fast > .background-particle:nth-child(93) {
+  top: 76%;
+  left: 37%;
+}
+.background.one.fast > .background-particle:nth-child(94) {
+  top: 52%;
+  left: 46%;
+}
+.background.one.fast > .background-particle:nth-child(95) {
+  top: 89%;
+  left: 48%;
+}
+.background.one.fast > .background-particle:nth-child(96) {
+  top: 94%;
+  left: 18%;
+}
+.background.one.fast > .background-particle:nth-child(97) {
+  top: 97%;
+  left: 14%;
+}
+.background.one.fast > .background-particle:nth-child(98) {
+  top: 71%;
+  left: 50%;
+}
+.background.one.fast > .background-particle:nth-child(99) {
+  top: 91%;
+  left: 40%;
+}
+.background.one.fast > .background-particle:nth-child(100) {
+  top: 13%;
+  left: 65%;
+}
+.background.two.slow > .background-particle:nth-child(1) {
+  top: 76%;
+  left: 58%;
+}
+.background.two.slow > .background-particle:nth-child(2) {
+  top: 45%;
+  left: 21%;
+}
+.background.two.slow > .background-particle:nth-child(3) {
+  top: 40%;
+  left: 41%;
+}
+.background.two.slow > .background-particle:nth-child(4) {
+  top: 69%;
+  left: 66%;
+}
+.background.two.slow > .background-particle:nth-child(5) {
+  top: 37%;
+  left: 34%;
+}
+.background.two.slow > .background-particle:nth-child(6) {
+  top: 60%;
+  left: 96%;
+}
+.background.two.slow > .background-particle:nth-child(7) {
+  top: 86%;
+  left: 99%;
+}
+.background.two.slow > .background-particle:nth-child(8) {
+  top: 57%;
+  left: 100%;
+}
+.background.two.slow > .background-particle:nth-child(9) {
+  top: 85%;
+  left: 11%;
+}
+.background.two.slow > .background-particle:nth-child(10) {
+  top: 81%;
+  left: 43%;
+}
+.background.two.slow > .background-particle:nth-child(11) {
+  top: 80%;
+  left: 34%;
+}
+.background.two.slow > .background-particle:nth-child(12) {
+  top: 35%;
+  left: 68%;
+}
+.background.two.slow > .background-particle:nth-child(13) {
+  top: 2%;
+  left: 53%;
+}
+.background.two.slow > .background-particle:nth-child(14) {
+  top: 57%;
+  left: 64%;
+}
+.background.two.slow > .background-particle:nth-child(15) {
+  top: 17%;
+  left: 51%;
+}
+.background.two.slow > .background-particle:nth-child(16) {
+  top: 93%;
+  left: 20%;
+}
+.background.two.slow > .background-particle:nth-child(17) {
+  top: 52%;
+  left: 23%;
+}
+.background.two.slow > .background-particle:nth-child(18) {
+  top: 30%;
+  left: 40%;
+}
+.background.two.slow > .background-particle:nth-child(19) {
+  top: 96%;
+  left: 91%;
+}
+.background.two.slow > .background-particle:nth-child(20) {
+  top: 10%;
+  left: 91%;
+}
+.background.two.slow > .background-particle:nth-child(21) {
+  top: 17%;
+  left: 83%;
+}
+.background.two.slow > .background-particle:nth-child(22) {
+  top: 8%;
+  left: 65%;
+}
+.background.two.slow > .background-particle:nth-child(23) {
+  top: 57%;
+  left: 73%;
+}
+.background.two.slow > .background-particle:nth-child(24) {
+  top: 22%;
+  left: 22%;
+}
+.background.two.slow > .background-particle:nth-child(25) {
+  top: 22%;
+  left: 71%;
+}
+.background.two.slow > .background-particle:nth-child(26) {
+  top: 89%;
+  left: 31%;
+}
+.background.two.slow > .background-particle:nth-child(27) {
+  top: 73%;
+  left: 86%;
+}
+.background.two.slow > .background-particle:nth-child(28) {
+  top: 82%;
+  left: 80%;
+}
+.background.two.slow > .background-particle:nth-child(29) {
   top: 50%;
+  left: 78%;
+}
+.background.two.slow > .background-particle:nth-child(30) {
+  top: 44%;
+  left: 9%;
+}
+.background.two.slow > .background-particle:nth-child(31) {
+  top: 26%;
   left: 6%;
 }
-.background.medium > .background-particle:nth-child(15) {
+.background.two.slow > .background-particle:nth-child(32) {
+  top: 68%;
+  left: 11%;
+}
+.background.two.slow > .background-particle:nth-child(33) {
+  top: 45%;
+  left: 14%;
+}
+.background.two.slow > .background-particle:nth-child(34) {
+  top: 14%;
+  left: 87%;
+}
+.background.two.slow > .background-particle:nth-child(35) {
+  top: 12%;
+  left: 14%;
+}
+.background.two.slow > .background-particle:nth-child(36) {
+  top: 67%;
+  left: 98%;
+}
+.background.two.slow > .background-particle:nth-child(37) {
+  top: 96%;
+  left: 17%;
+}
+.background.two.slow > .background-particle:nth-child(38) {
+  top: 64%;
+  left: 71%;
+}
+.background.two.slow > .background-particle:nth-child(39) {
+  top: 67%;
+  left: 54%;
+}
+.background.two.slow > .background-particle:nth-child(40) {
+  top: 74%;
+  left: 45%;
+}
+.background.two.slow > .background-particle:nth-child(41) {
+  top: 90%;
+  left: 65%;
+}
+.background.two.slow > .background-particle:nth-child(42) {
+  top: 1%;
+  left: 40%;
+}
+.background.two.slow > .background-particle:nth-child(43) {
+  top: 10%;
+  left: 69%;
+}
+.background.two.slow > .background-particle:nth-child(44) {
+  top: 13%;
+  left: 31%;
+}
+.background.two.slow > .background-particle:nth-child(45) {
+  top: 52%;
+  left: 22%;
+}
+.background.two.slow > .background-particle:nth-child(46) {
+  top: 8%;
+  left: 30%;
+}
+.background.two.slow > .background-particle:nth-child(47) {
+  top: 79%;
+  left: 100%;
+}
+.background.two.slow > .background-particle:nth-child(48) {
+  top: 44%;
+  left: 33%;
+}
+.background.two.slow > .background-particle:nth-child(49) {
+  top: 85%;
+  left: 49%;
+}
+.background.two.slow > .background-particle:nth-child(50) {
+  top: 73%;
+  left: 50%;
+}
+.background.two.slow > .background-particle:nth-child(51) {
+  top: 85%;
+  left: 72%;
+}
+.background.two.slow > .background-particle:nth-child(52) {
+  top: 88%;
+  left: 45%;
+}
+.background.two.slow > .background-particle:nth-child(53) {
+  top: 86%;
+  left: 20%;
+}
+.background.two.slow > .background-particle:nth-child(54) {
+  top: 96%;
+  left: 18%;
+}
+.background.two.slow > .background-particle:nth-child(55) {
+  top: 35%;
+  left: 13%;
+}
+.background.two.slow > .background-particle:nth-child(56) {
+  top: 97%;
+  left: 1%;
+}
+.background.two.slow > .background-particle:nth-child(57) {
+  top: 38%;
+  left: 10%;
+}
+.background.two.slow > .background-particle:nth-child(58) {
+  top: 35%;
+  left: 34%;
+}
+.background.two.slow > .background-particle:nth-child(59) {
+  top: 75%;
+  left: 5%;
+}
+.background.two.slow > .background-particle:nth-child(60) {
+  top: 99%;
+  left: 51%;
+}
+.background.two.slow > .background-particle:nth-child(61) {
+  top: 28%;
+  left: 99%;
+}
+.background.two.slow > .background-particle:nth-child(62) {
+  top: 43%;
+  left: 75%;
+}
+.background.two.slow > .background-particle:nth-child(63) {
+  top: 11%;
+  left: 18%;
+}
+.background.two.slow > .background-particle:nth-child(64) {
+  top: 73%;
+  left: 53%;
+}
+.background.two.slow > .background-particle:nth-child(65) {
+  top: 31%;
+  left: 1%;
+}
+.background.two.slow > .background-particle:nth-child(66) {
+  top: 10%;
+  left: 91%;
+}
+.background.two.slow > .background-particle:nth-child(67) {
+  top: 55%;
+  left: 24%;
+}
+.background.two.slow > .background-particle:nth-child(68) {
+  top: 43%;
+  left: 96%;
+}
+.background.two.slow > .background-particle:nth-child(69) {
+  top: 18%;
+  left: 68%;
+}
+.background.two.slow > .background-particle:nth-child(70) {
+  top: 20%;
+  left: 34%;
+}
+.background.two.slow > .background-particle:nth-child(71) {
+  top: 38%;
+  left: 78%;
+}
+.background.two.slow > .background-particle:nth-child(72) {
+  top: 74%;
+  left: 44%;
+}
+.background.two.slow > .background-particle:nth-child(73) {
+  top: 44%;
+  left: 89%;
+}
+.background.two.slow > .background-particle:nth-child(74) {
+  top: 41%;
+  left: 58%;
+}
+.background.two.slow > .background-particle:nth-child(75) {
+  top: 88%;
+  left: 17%;
+}
+.background.two.slow > .background-particle:nth-child(76) {
+  top: 56%;
+  left: 7%;
+}
+.background.two.slow > .background-particle:nth-child(77) {
+  top: 31%;
+  left: 44%;
+}
+.background.two.slow > .background-particle:nth-child(78) {
+  top: 84%;
+  left: 98%;
+}
+.background.two.slow > .background-particle:nth-child(79) {
+  top: 68%;
+  left: 89%;
+}
+.background.two.slow > .background-particle:nth-child(80) {
+  top: 48%;
+  left: 29%;
+}
+.background.two.slow > .background-particle:nth-child(81) {
+  top: 99%;
+  left: 65%;
+}
+.background.two.slow > .background-particle:nth-child(82) {
+  top: 70%;
+  left: 13%;
+}
+.background.two.slow > .background-particle:nth-child(83) {
+  top: 49%;
+  left: 40%;
+}
+.background.two.slow > .background-particle:nth-child(84) {
+  top: 91%;
+  left: 86%;
+}
+.background.two.slow > .background-particle:nth-child(85) {
+  top: 27%;
+  left: 88%;
+}
+.background.two.slow > .background-particle:nth-child(86) {
+  top: 24%;
+  left: 40%;
+}
+.background.two.slow > .background-particle:nth-child(87) {
+  top: 45%;
+  left: 69%;
+}
+.background.two.slow > .background-particle:nth-child(88) {
+  top: 100%;
+  left: 47%;
+}
+.background.two.slow > .background-particle:nth-child(89) {
+  top: 1%;
+  left: 41%;
+}
+.background.two.slow > .background-particle:nth-child(90) {
+  top: 74%;
+  left: 66%;
+}
+.background.two.slow > .background-particle:nth-child(91) {
+  top: 64%;
+  left: 72%;
+}
+.background.two.slow > .background-particle:nth-child(92) {
+  top: 85%;
+  left: 68%;
+}
+.background.two.slow > .background-particle:nth-child(93) {
+  top: 93%;
+  left: 97%;
+}
+.background.two.slow > .background-particle:nth-child(94) {
+  top: 98%;
+  left: 35%;
+}
+.background.two.slow > .background-particle:nth-child(95) {
+  top: 35%;
+  left: 50%;
+}
+.background.two.slow > .background-particle:nth-child(96) {
+  top: 98%;
+  left: 3%;
+}
+.background.two.slow > .background-particle:nth-child(97) {
+  top: 72%;
+  left: 26%;
+}
+.background.two.slow > .background-particle:nth-child(98) {
+  top: 15%;
+  left: 45%;
+}
+.background.two.slow > .background-particle:nth-child(99) {
+  top: 8%;
+  left: 29%;
+}
+.background.two.slow > .background-particle:nth-child(100) {
+  top: 81%;
+  left: 57%;
+}
+.background.two.medium > .background-particle:nth-child(1) {
+  top: 46%;
+  left: 13%;
+}
+.background.two.medium > .background-particle:nth-child(2) {
+  top: 28%;
+  left: 52%;
+}
+.background.two.medium > .background-particle:nth-child(3) {
+  top: 80%;
+  left: 68%;
+}
+.background.two.medium > .background-particle:nth-child(4) {
+  top: 8%;
+  left: 77%;
+}
+.background.two.medium > .background-particle:nth-child(5) {
+  top: 50%;
+  left: 84%;
+}
+.background.two.medium > .background-particle:nth-child(6) {
+  top: 40%;
+  left: 37%;
+}
+.background.two.medium > .background-particle:nth-child(7) {
+  top: 56%;
+  left: 43%;
+}
+.background.two.medium > .background-particle:nth-child(8) {
+  top: 29%;
+  left: 12%;
+}
+.background.two.medium > .background-particle:nth-child(9) {
+  top: 40%;
+  left: 20%;
+}
+.background.two.medium > .background-particle:nth-child(10) {
+  top: 61%;
+  left: 88%;
+}
+.background.two.medium > .background-particle:nth-child(11) {
+  top: 83%;
+  left: 4%;
+}
+.background.two.medium > .background-particle:nth-child(12) {
+  top: 87%;
+  left: 27%;
+}
+.background.two.medium > .background-particle:nth-child(13) {
+  top: 7%;
+  left: 5%;
+}
+.background.two.medium > .background-particle:nth-child(14) {
+  top: 66%;
+  left: 2%;
+}
+.background.two.medium > .background-particle:nth-child(15) {
+  top: 71%;
+  left: 51%;
+}
+.background.two.medium > .background-particle:nth-child(16) {
+  top: 38%;
+  left: 33%;
+}
+.background.two.medium > .background-particle:nth-child(17) {
+  top: 86%;
+  left: 37%;
+}
+.background.two.medium > .background-particle:nth-child(18) {
+  top: 43%;
+  left: 51%;
+}
+.background.two.medium > .background-particle:nth-child(19) {
+  top: 73%;
+  left: 12%;
+}
+.background.two.medium > .background-particle:nth-child(20) {
+  top: 91%;
+  left: 92%;
+}
+.background.two.medium > .background-particle:nth-child(21) {
+  top: 91%;
+  left: 66%;
+}
+.background.two.medium > .background-particle:nth-child(22) {
+  top: 45%;
+  left: 31%;
+}
+.background.two.medium > .background-particle:nth-child(23) {
+  top: 14%;
+  left: 56%;
+}
+.background.two.medium > .background-particle:nth-child(24) {
+  top: 1%;
+  left: 26%;
+}
+.background.two.medium > .background-particle:nth-child(25) {
+  top: 96%;
+  left: 61%;
+}
+.background.two.medium > .background-particle:nth-child(26) {
+  top: 51%;
+  left: 90%;
+}
+.background.two.medium > .background-particle:nth-child(27) {
+  top: 96%;
+  left: 16%;
+}
+.background.two.medium > .background-particle:nth-child(28) {
+  top: 85%;
+  left: 98%;
+}
+.background.two.medium > .background-particle:nth-child(29) {
+  top: 57%;
+  left: 34%;
+}
+.background.two.medium > .background-particle:nth-child(30) {
+  top: 70%;
+  left: 49%;
+}
+.background.two.medium > .background-particle:nth-child(31) {
+  top: 85%;
+  left: 81%;
+}
+.background.two.medium > .background-particle:nth-child(32) {
+  top: 69%;
+  left: 6%;
+}
+.background.two.medium > .background-particle:nth-child(33) {
+  top: 15%;
+  left: 50%;
+}
+.background.two.medium > .background-particle:nth-child(34) {
+  top: 51%;
+  left: 62%;
+}
+.background.two.medium > .background-particle:nth-child(35) {
+  top: 66%;
+  left: 3%;
+}
+.background.two.medium > .background-particle:nth-child(36) {
+  top: 70%;
+  left: 46%;
+}
+.background.two.medium > .background-particle:nth-child(37) {
+  top: 86%;
+  left: 73%;
+}
+.background.two.medium > .background-particle:nth-child(38) {
+  top: 86%;
+  left: 77%;
+}
+.background.two.medium > .background-particle:nth-child(39) {
+  top: 80%;
+  left: 89%;
+}
+.background.two.medium > .background-particle:nth-child(40) {
   top: 2%;
   left: 40%;
 }
-.background.medium > .background-particle:nth-child(16) {
-  top: 1%;
-  left: 97%;
+.background.two.medium > .background-particle:nth-child(41) {
+  top: 52%;
+  left: 32%;
 }
-.background.medium > .background-particle:nth-child(17) {
-  top: 40%;
-  left: 61%;
+.background.two.medium > .background-particle:nth-child(42) {
+  top: 43%;
+  left: 27%;
 }
-.background.medium > .background-particle:nth-child(18) {
-  top: 8%;
-  left: 13%;
-}
-.background.medium > .background-particle:nth-child(19) {
+.background.two.medium > .background-particle:nth-child(43) {
   top: 30%;
-  left: 30%;
+  left: 48%;
 }
-.background.medium > .background-particle:nth-child(20) {
-  top: 81%;
-  left: 73%;
+.background.two.medium > .background-particle:nth-child(44) {
+  top: 39%;
+  left: 98%;
 }
-.background.medium > .background-particle:nth-child(21) {
-  top: 42%;
-  left: 63%;
-}
-.background.medium > .background-particle:nth-child(22) {
-  top: 1%;
-  left: 74%;
-}
-.background.medium > .background-particle:nth-child(23) {
-  top: 6%;
-  left: 73%;
-}
-.background.medium > .background-particle:nth-child(24) {
-  top: 26%;
-  left: 6%;
-}
-.background.medium > .background-particle:nth-child(25) {
+.background.two.medium > .background-particle:nth-child(45) {
   top: 2%;
-  left: 44%;
-}
-.background.medium > .background-particle:nth-child(26) {
-  top: 26%;
-  left: 64%;
-}
-.background.medium > .background-particle:nth-child(27) {
-  top: 44%;
-  left: 30%;
-}
-.background.medium > .background-particle:nth-child(28) {
-  top: 86%;
-  left: 80%;
-}
-.background.medium > .background-particle:nth-child(29) {
-  top: 46%;
-  left: 56%;
-}
-.background.medium > .background-particle:nth-child(30) {
-  top: 65%;
-  left: 71%;
-}
-.background.medium > .background-particle:nth-child(31) {
-  top: 25%;
-  left: 90%;
-}
-.background.medium > .background-particle:nth-child(32) {
-  top: 57%;
-  left: 57%;
-}
-.background.medium > .background-particle:nth-child(33) {
-  top: 74%;
-  left: 38%;
-}
-.background.medium > .background-particle:nth-child(34) {
-  top: 23%;
-  left: 95%;
-}
-.background.medium > .background-particle:nth-child(35) {
-  top: 71%;
-  left: 41%;
-}
-.background.medium > .background-particle:nth-child(36) {
-  top: 84%;
-  left: 96%;
-}
-.background.medium > .background-particle:nth-child(37) {
-  top: 83%;
-  left: 84%;
-}
-.background.medium > .background-particle:nth-child(38) {
-  top: 63%;
   left: 83%;
 }
-.background.medium > .background-particle:nth-child(39) {
-  top: 10%;
-  left: 79%;
-}
-.background.medium > .background-particle:nth-child(40) {
-  top: 36%;
-  left: 85%;
-}
-.background.medium > .background-particle:nth-child(41) {
-  top: 97%;
-  left: 43%;
-}
-.background.medium > .background-particle:nth-child(42) {
-  top: 54%;
-  left: 30%;
-}
-.background.medium > .background-particle:nth-child(43) {
-  top: 22%;
-  left: 89%;
-}
-.background.medium > .background-particle:nth-child(44) {
-  top: 94%;
-  left: 80%;
-}
-.background.medium > .background-particle:nth-child(45) {
-  top: 10%;
-  left: 52%;
-}
-.background.medium > .background-particle:nth-child(46) {
-  top: 34%;
-  left: 3%;
-}
-.background.medium > .background-particle:nth-child(47) {
-  top: 82%;
-  left: 57%;
-}
-.background.medium > .background-particle:nth-child(48) {
-  top: 1%;
-  left: 73%;
-}
-.background.medium > .background-particle:nth-child(49) {
-  top: 70%;
-  left: 96%;
-}
-.background.medium > .background-particle:nth-child(50) {
-  top: 7%;
-  left: 22%;
-}
-.background.fast > .background-particle:nth-child(1) {
-  top: 83%;
-  left: 62%;
-}
-.background.fast > .background-particle:nth-child(2) {
-  top: 30%;
-  left: 79%;
-}
-.background.fast > .background-particle:nth-child(3) {
-  top: 74%;
-  left: 79%;
-}
-.background.fast > .background-particle:nth-child(4) {
-  top: 95%;
-  left: 49%;
-}
-.background.fast > .background-particle:nth-child(5) {
-  top: 11%;
-  left: 1%;
-}
-.background.fast > .background-particle:nth-child(6) {
-  top: 45%;
-  left: 45%;
-}
-.background.fast > .background-particle:nth-child(7) {
-  top: 17%;
-  left: 26%;
-}
-.background.fast > .background-particle:nth-child(8) {
-  top: 40%;
-  left: 44%;
-}
-.background.fast > .background-particle:nth-child(9) {
-  top: 78%;
-  left: 29%;
-}
-.background.fast > .background-particle:nth-child(10) {
-  top: 43%;
-  left: 89%;
-}
-.background.fast > .background-particle:nth-child(11) {
-  top: 39%;
-  left: 64%;
-}
-.background.fast > .background-particle:nth-child(12) {
-  top: 59%;
-  left: 72%;
-}
-.background.fast > .background-particle:nth-child(13) {
-  top: 60%;
-  left: 100%;
-}
-.background.fast > .background-particle:nth-child(14) {
-  top: 64%;
-  left: 62%;
-}
-.background.fast > .background-particle:nth-child(15) {
-  top: 40%;
-  left: 61%;
-}
-.background.fast > .background-particle:nth-child(16) {
-  top: 100%;
-  left: 4%;
-}
-.background.fast > .background-particle:nth-child(17) {
-  top: 76%;
-  left: 45%;
-}
-.background.fast > .background-particle:nth-child(18) {
-  top: 44%;
-  left: 77%;
-}
-.background.fast > .background-particle:nth-child(19) {
-  top: 5%;
-  left: 18%;
-}
-.background.fast > .background-particle:nth-child(20) {
-  top: 89%;
-  left: 90%;
-}
-.background.fast > .background-particle:nth-child(21) {
-  top: 17%;
-  left: 2%;
-}
-.background.fast > .background-particle:nth-child(22) {
-  top: 68%;
-  left: 55%;
-}
-.background.fast > .background-particle:nth-child(23) {
-  top: 2%;
-  left: 44%;
-}
-.background.fast > .background-particle:nth-child(24) {
-  top: 59%;
+.background.two.medium > .background-particle:nth-child(46) {
+  top: 19%;
   left: 86%;
 }
-.background.fast > .background-particle:nth-child(25) {
-  top: 77%;
-  left: 21%;
+.background.two.medium > .background-particle:nth-child(47) {
+  top: 20%;
+  left: 98%;
 }
-.background.fast > .background-particle:nth-child(26) {
-  top: 18%;
-  left: 74%;
-}
-.background.fast > .background-particle:nth-child(27) {
-  top: 8%;
-  left: 69%;
-}
-.background.fast > .background-particle:nth-child(28) {
-  top: 56%;
-  left: 14%;
-}
-.background.fast > .background-particle:nth-child(29) {
-  top: 8%;
-  left: 88%;
-}
-.background.fast > .background-particle:nth-child(30) {
-  top: 76%;
-  left: 90%;
-}
-.background.fast > .background-particle:nth-child(31) {
-  top: 21%;
-  left: 23%;
-}
-.background.fast > .background-particle:nth-child(32) {
-  top: 93%;
-  left: 94%;
-}
-.background.fast > .background-particle:nth-child(33) {
-  top: 17%;
-  left: 42%;
-}
-.background.fast > .background-particle:nth-child(34) {
-  top: 4%;
-  left: 28%;
-}
-.background.fast > .background-particle:nth-child(35) {
-  top: 86%;
-  left: 2%;
-}
-.background.fast > .background-particle:nth-child(36) {
-  top: 70%;
-  left: 25%;
-}
-.background.fast > .background-particle:nth-child(37) {
-  top: 62%;
-  left: 35%;
-}
-.background.fast > .background-particle:nth-child(38) {
-  top: 16%;
-  left: 6%;
-}
-.background.fast > .background-particle:nth-child(39) {
-  top: 47%;
-  left: 4%;
-}
-.background.fast > .background-particle:nth-child(40) {
-  top: 21%;
-  left: 96%;
-}
-.background.fast > .background-particle:nth-child(41) {
-  top: 56%;
-  left: 52%;
-}
-.background.fast > .background-particle:nth-child(42) {
-  top: 16%;
-  left: 29%;
-}
-.background.fast > .background-particle:nth-child(43) {
-  top: 60%;
+.background.two.medium > .background-particle:nth-child(48) {
+  top: 87%;
   left: 97%;
 }
-.background.fast > .background-particle:nth-child(44) {
-  top: 19%;
-  left: 45%;
+.background.two.medium > .background-particle:nth-child(49) {
+  top: 43%;
+  left: 90%;
 }
-.background.fast > .background-particle:nth-child(45) {
+.background.two.medium > .background-particle:nth-child(50) {
+  top: 4%;
+  left: 91%;
+}
+.background.two.medium > .background-particle:nth-child(51) {
+  top: 25%;
+  left: 44%;
+}
+.background.two.medium > .background-particle:nth-child(52) {
+  top: 78%;
+  left: 55%;
+}
+.background.two.medium > .background-particle:nth-child(53) {
+  top: 22%;
+  left: 1%;
+}
+.background.two.medium > .background-particle:nth-child(54) {
+  top: 4%;
+  left: 30%;
+}
+.background.two.medium > .background-particle:nth-child(55) {
+  top: 100%;
+  left: 7%;
+}
+.background.two.medium > .background-particle:nth-child(56) {
+  top: 67%;
+  left: 70%;
+}
+.background.two.medium > .background-particle:nth-child(57) {
+  top: 70%;
+  left: 89%;
+}
+.background.two.medium > .background-particle:nth-child(58) {
+  top: 19%;
+  left: 51%;
+}
+.background.two.medium > .background-particle:nth-child(59) {
+  top: 87%;
+  left: 27%;
+}
+.background.two.medium > .background-particle:nth-child(60) {
+  top: 22%;
+  left: 22%;
+}
+.background.two.medium > .background-particle:nth-child(61) {
+  top: 33%;
+  left: 28%;
+}
+.background.two.medium > .background-particle:nth-child(62) {
+  top: 60%;
+  left: 65%;
+}
+.background.two.medium > .background-particle:nth-child(63) {
+  top: 32%;
+  left: 63%;
+}
+.background.two.medium > .background-particle:nth-child(64) {
+  top: 41%;
+  left: 96%;
+}
+.background.two.medium > .background-particle:nth-child(65) {
+  top: 18%;
+  left: 41%;
+}
+.background.two.medium > .background-particle:nth-child(66) {
+  top: 9%;
+  left: 38%;
+}
+.background.two.medium > .background-particle:nth-child(67) {
+  top: 67%;
+  left: 79%;
+}
+.background.two.medium > .background-particle:nth-child(68) {
+  top: 67%;
+  left: 85%;
+}
+.background.two.medium > .background-particle:nth-child(69) {
+  top: 89%;
+  left: 10%;
+}
+.background.two.medium > .background-particle:nth-child(70) {
+  top: 87%;
+  left: 51%;
+}
+.background.two.medium > .background-particle:nth-child(71) {
+  top: 98%;
+  left: 93%;
+}
+.background.two.medium > .background-particle:nth-child(72) {
+  top: 43%;
+  left: 23%;
+}
+.background.two.medium > .background-particle:nth-child(73) {
+  top: 15%;
+  left: 91%;
+}
+.background.two.medium > .background-particle:nth-child(74) {
+  top: 43%;
+  left: 41%;
+}
+.background.two.medium > .background-particle:nth-child(75) {
+  top: 94%;
+  left: 56%;
+}
+.background.two.medium > .background-particle:nth-child(76) {
+  top: 71%;
+  left: 29%;
+}
+.background.two.medium > .background-particle:nth-child(77) {
+  top: 26%;
+  left: 70%;
+}
+.background.two.medium > .background-particle:nth-child(78) {
+  top: 26%;
+  left: 10%;
+}
+.background.two.medium > .background-particle:nth-child(79) {
+  top: 73%;
+  left: 50%;
+}
+.background.two.medium > .background-particle:nth-child(80) {
+  top: 10%;
+  left: 29%;
+}
+.background.two.medium > .background-particle:nth-child(81) {
+  top: 4%;
+  left: 22%;
+}
+.background.two.medium > .background-particle:nth-child(82) {
+  top: 39%;
+  left: 54%;
+}
+.background.two.medium > .background-particle:nth-child(83) {
+  top: 81%;
+  left: 54%;
+}
+.background.two.medium > .background-particle:nth-child(84) {
+  top: 30%;
+  left: 80%;
+}
+.background.two.medium > .background-particle:nth-child(85) {
+  top: 70%;
+  left: 61%;
+}
+.background.two.medium > .background-particle:nth-child(86) {
+  top: 89%;
+  left: 51%;
+}
+.background.two.medium > .background-particle:nth-child(87) {
+  top: 13%;
+  left: 31%;
+}
+.background.two.medium > .background-particle:nth-child(88) {
+  top: 48%;
+  left: 3%;
+}
+.background.two.medium > .background-particle:nth-child(89) {
+  top: 79%;
+  left: 69%;
+}
+.background.two.medium > .background-particle:nth-child(90) {
+  top: 71%;
+  left: 35%;
+}
+.background.two.medium > .background-particle:nth-child(91) {
   top: 41%;
   left: 68%;
 }
-.background.fast > .background-particle:nth-child(46) {
-  top: 10%;
+.background.two.medium > .background-particle:nth-child(92) {
+  top: 90%;
+  left: 90%;
+}
+.background.two.medium > .background-particle:nth-child(93) {
+  top: 83%;
+  left: 10%;
+}
+.background.two.medium > .background-particle:nth-child(94) {
+  top: 50%;
+  left: 99%;
+}
+.background.two.medium > .background-particle:nth-child(95) {
+  top: 62%;
+  left: 34%;
+}
+.background.two.medium > .background-particle:nth-child(96) {
+  top: 98%;
+  left: 15%;
+}
+.background.two.medium > .background-particle:nth-child(97) {
+  top: 12%;
+  left: 76%;
+}
+.background.two.medium > .background-particle:nth-child(98) {
+  top: 49%;
+  left: 64%;
+}
+.background.two.medium > .background-particle:nth-child(99) {
+  top: 23%;
+  left: 63%;
+}
+.background.two.medium > .background-particle:nth-child(100) {
+  top: 85%;
+  left: 8%;
+}
+.background.two.fast > .background-particle:nth-child(1) {
+  top: 21%;
+  left: 71%;
+}
+.background.two.fast > .background-particle:nth-child(2) {
+  top: 100%;
+  left: 62%;
+}
+.background.two.fast > .background-particle:nth-child(3) {
+  top: 100%;
+  left: 85%;
+}
+.background.two.fast > .background-particle:nth-child(4) {
+  top: 78%;
+  left: 4%;
+}
+.background.two.fast > .background-particle:nth-child(5) {
+  top: 36%;
+  left: 1%;
+}
+.background.two.fast > .background-particle:nth-child(6) {
+  top: 25%;
+  left: 79%;
+}
+.background.two.fast > .background-particle:nth-child(7) {
+  top: 38%;
+  left: 62%;
+}
+.background.two.fast > .background-particle:nth-child(8) {
+  top: 12%;
+  left: 16%;
+}
+.background.two.fast > .background-particle:nth-child(9) {
+  top: 31%;
+  left: 42%;
+}
+.background.two.fast > .background-particle:nth-child(10) {
+  top: 40%;
+  left: 56%;
+}
+.background.two.fast > .background-particle:nth-child(11) {
+  top: 92%;
+  left: 49%;
+}
+.background.two.fast > .background-particle:nth-child(12) {
+  top: 20%;
+  left: 43%;
+}
+.background.two.fast > .background-particle:nth-child(13) {
+  top: 12%;
+  left: 56%;
+}
+.background.two.fast > .background-particle:nth-child(14) {
+  top: 49%;
+  left: 10%;
+}
+.background.two.fast > .background-particle:nth-child(15) {
+  top: 7%;
+  left: 26%;
+}
+.background.two.fast > .background-particle:nth-child(16) {
+  top: 61%;
+  left: 85%;
+}
+.background.two.fast > .background-particle:nth-child(17) {
+  top: 72%;
+  left: 87%;
+}
+.background.two.fast > .background-particle:nth-child(18) {
+  top: 62%;
+  left: 77%;
+}
+.background.two.fast > .background-particle:nth-child(19) {
+  top: 91%;
+  left: 60%;
+}
+.background.two.fast > .background-particle:nth-child(20) {
+  top: 66%;
+  left: 96%;
+}
+.background.two.fast > .background-particle:nth-child(21) {
+  top: 72%;
+  left: 85%;
+}
+.background.two.fast > .background-particle:nth-child(22) {
+  top: 79%;
+  left: 92%;
+}
+.background.two.fast > .background-particle:nth-child(23) {
+  top: 72%;
+  left: 53%;
+}
+.background.two.fast > .background-particle:nth-child(24) {
+  top: 16%;
   left: 11%;
 }
-.background.fast > .background-particle:nth-child(47) {
-  top: 30%;
-  left: 5%;
+.background.two.fast > .background-particle:nth-child(25) {
+  top: 40%;
+  left: 8%;
 }
-.background.fast > .background-particle:nth-child(48) {
-  top: 72%;
+.background.two.fast > .background-particle:nth-child(26) {
+  top: 9%;
+  left: 53%;
+}
+.background.two.fast > .background-particle:nth-child(27) {
+  top: 60%;
   left: 83%;
 }
-.background.fast > .background-particle:nth-child(49) {
-  top: 72%;
-  left: 82%;
+.background.two.fast > .background-particle:nth-child(28) {
+  top: 13%;
+  left: 19%;
 }
-.background.fast > .background-particle:nth-child(50) {
+.background.two.fast > .background-particle:nth-child(29) {
+  top: 65%;
+  left: 94%;
+}
+.background.two.fast > .background-particle:nth-child(30) {
+  top: 94%;
+  left: 13%;
+}
+.background.two.fast > .background-particle:nth-child(31) {
+  top: 61%;
+  left: 10%;
+}
+.background.two.fast > .background-particle:nth-child(32) {
+  top: 56%;
+  left: 6%;
+}
+.background.two.fast > .background-particle:nth-child(33) {
+  top: 16%;
+  left: 39%;
+}
+.background.two.fast > .background-particle:nth-child(34) {
+  top: 34%;
+  left: 22%;
+}
+.background.two.fast > .background-particle:nth-child(35) {
   top: 82%;
+  left: 66%;
+}
+.background.two.fast > .background-particle:nth-child(36) {
+  top: 21%;
+  left: 13%;
+}
+.background.two.fast > .background-particle:nth-child(37) {
+  top: 37%;
+  left: 45%;
+}
+.background.two.fast > .background-particle:nth-child(38) {
+  top: 10%;
+  left: 24%;
+}
+.background.two.fast > .background-particle:nth-child(39) {
+  top: 100%;
+  left: 28%;
+}
+.background.two.fast > .background-particle:nth-child(40) {
+  top: 11%;
+  left: 33%;
+}
+.background.two.fast > .background-particle:nth-child(41) {
+  top: 49%;
+  left: 25%;
+}
+.background.two.fast > .background-particle:nth-child(42) {
+  top: 40%;
+  left: 87%;
+}
+.background.two.fast > .background-particle:nth-child(43) {
+  top: 56%;
+  left: 78%;
+}
+.background.two.fast > .background-particle:nth-child(44) {
+  top: 79%;
+  left: 98%;
+}
+.background.two.fast > .background-particle:nth-child(45) {
+  top: 52%;
+  left: 66%;
+}
+.background.two.fast > .background-particle:nth-child(46) {
+  top: 10%;
+  left: 15%;
+}
+.background.two.fast > .background-particle:nth-child(47) {
+  top: 57%;
+  left: 14%;
+}
+.background.two.fast > .background-particle:nth-child(48) {
+  top: 4%;
+  left: 59%;
+}
+.background.two.fast > .background-particle:nth-child(49) {
+  top: 87%;
+  left: 12%;
+}
+.background.two.fast > .background-particle:nth-child(50) {
+  top: 82%;
+  left: 2%;
+}
+.background.two.fast > .background-particle:nth-child(51) {
+  top: 87%;
+  left: 43%;
+}
+.background.two.fast > .background-particle:nth-child(52) {
+  top: 30%;
+  left: 56%;
+}
+.background.two.fast > .background-particle:nth-child(53) {
+  top: 73%;
+  left: 53%;
+}
+.background.two.fast > .background-particle:nth-child(54) {
+  top: 62%;
+  left: 31%;
+}
+.background.two.fast > .background-particle:nth-child(55) {
+  top: 94%;
+  left: 94%;
+}
+.background.two.fast > .background-particle:nth-child(56) {
+  top: 88%;
+  left: 99%;
+}
+.background.two.fast > .background-particle:nth-child(57) {
+  top: 22%;
+  left: 50%;
+}
+.background.two.fast > .background-particle:nth-child(58) {
+  top: 58%;
+  left: 16%;
+}
+.background.two.fast > .background-particle:nth-child(59) {
+  top: 25%;
+  left: 93%;
+}
+.background.two.fast > .background-particle:nth-child(60) {
+  top: 44%;
   left: 63%;
+}
+.background.two.fast > .background-particle:nth-child(61) {
+  top: 38%;
+  left: 16%;
+}
+.background.two.fast > .background-particle:nth-child(62) {
+  top: 73%;
+  left: 40%;
+}
+.background.two.fast > .background-particle:nth-child(63) {
+  top: 65%;
+  left: 13%;
+}
+.background.two.fast > .background-particle:nth-child(64) {
+  top: 28%;
+  left: 26%;
+}
+.background.two.fast > .background-particle:nth-child(65) {
+  top: 62%;
+  left: 53%;
+}
+.background.two.fast > .background-particle:nth-child(66) {
+  top: 93%;
+  left: 93%;
+}
+.background.two.fast > .background-particle:nth-child(67) {
+  top: 56%;
+  left: 19%;
+}
+.background.two.fast > .background-particle:nth-child(68) {
+  top: 16%;
+  left: 94%;
+}
+.background.two.fast > .background-particle:nth-child(69) {
+  top: 4%;
+  left: 33%;
+}
+.background.two.fast > .background-particle:nth-child(70) {
+  top: 23%;
+  left: 85%;
+}
+.background.two.fast > .background-particle:nth-child(71) {
+  top: 27%;
+  left: 44%;
+}
+.background.two.fast > .background-particle:nth-child(72) {
+  top: 80%;
+  left: 20%;
+}
+.background.two.fast > .background-particle:nth-child(73) {
+  top: 37%;
+  left: 30%;
+}
+.background.two.fast > .background-particle:nth-child(74) {
+  top: 15%;
+  left: 6%;
+}
+.background.two.fast > .background-particle:nth-child(75) {
+  top: 50%;
+  left: 87%;
+}
+.background.two.fast > .background-particle:nth-child(76) {
+  top: 58%;
+  left: 87%;
+}
+.background.two.fast > .background-particle:nth-child(77) {
+  top: 7%;
+  left: 87%;
+}
+.background.two.fast > .background-particle:nth-child(78) {
+  top: 8%;
+  left: 13%;
+}
+.background.two.fast > .background-particle:nth-child(79) {
+  top: 60%;
+  left: 73%;
+}
+.background.two.fast > .background-particle:nth-child(80) {
+  top: 38%;
+  left: 36%;
+}
+.background.two.fast > .background-particle:nth-child(81) {
+  top: 92%;
+  left: 95%;
+}
+.background.two.fast > .background-particle:nth-child(82) {
+  top: 70%;
+  left: 21%;
+}
+.background.two.fast > .background-particle:nth-child(83) {
+  top: 68%;
+  left: 77%;
+}
+.background.two.fast > .background-particle:nth-child(84) {
+  top: 70%;
+  left: 6%;
+}
+.background.two.fast > .background-particle:nth-child(85) {
+  top: 2%;
+  left: 19%;
+}
+.background.two.fast > .background-particle:nth-child(86) {
+  top: 70%;
+  left: 27%;
+}
+.background.two.fast > .background-particle:nth-child(87) {
+  top: 93%;
+  left: 2%;
+}
+.background.two.fast > .background-particle:nth-child(88) {
+  top: 72%;
+  left: 63%;
+}
+.background.two.fast > .background-particle:nth-child(89) {
+  top: 84%;
+  left: 51%;
+}
+.background.two.fast > .background-particle:nth-child(90) {
+  top: 68%;
+  left: 72%;
+}
+.background.two.fast > .background-particle:nth-child(91) {
+  top: 91%;
+  left: 6%;
+}
+.background.two.fast > .background-particle:nth-child(92) {
+  top: 16%;
+  left: 5%;
+}
+.background.two.fast > .background-particle:nth-child(93) {
+  top: 86%;
+  left: 91%;
+}
+.background.two.fast > .background-particle:nth-child(94) {
+  top: 12%;
+  left: 49%;
+}
+.background.two.fast > .background-particle:nth-child(95) {
+  top: 26%;
+  left: 30%;
+}
+.background.two.fast > .background-particle:nth-child(96) {
+  top: 22%;
+  left: 9%;
+}
+.background.two.fast > .background-particle:nth-child(97) {
+  top: 8%;
+  left: 9%;
+}
+.background.two.fast > .background-particle:nth-child(98) {
+  top: 6%;
+  left: 71%;
+}
+.background.two.fast > .background-particle:nth-child(99) {
+  top: 12%;
+  left: 99%;
+}
+.background.two.fast > .background-particle:nth-child(100) {
+  top: 75%;
+  left: 24%;
 }
 
 body {
+  font-family: "Merriweather", serif;
+  color: #b4b3b1;
+  background-color: #2f3031;
   margin: 0 30%;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: #0da5ec;
+}
+
+code {
+  font-family: "Fira Code", monospace;
+}
+
+img {
+  max-width: 100%;
 }
 
 .container {
@@ -721,14 +2516,12 @@ body {
   justify-content: space-evenly;
   flex-wrap: wrap;
 }
-
-.buttons p > a {
+.buttons p a {
   padding: 15px;
   display: flex;
   align-items: center;
 }
-
-.buttons p > a > img {
+.buttons p a img {
   margin-right: 6px;
   width: 12px;
   height: 12px;
