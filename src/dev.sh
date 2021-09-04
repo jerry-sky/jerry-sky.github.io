@@ -29,9 +29,6 @@ fi
 # environment: root repository directory
 cd $WRK_DIR
 
-# prepare
-$SRC_DIR/prebuild.sh
-
 RENDER="$SRC_DIR/render.sh"
 
 # initialise
@@ -40,7 +37,7 @@ $RENDER
 # keep rebuilding on every file change
 (
     inotifywait \
-        -mr public \
+        -mr public template \
         -e MODIFY \
         -e CREATE \
         -e DELETE \

@@ -1,2 +1,4 @@
 #!/bin/sh
-docker-compose run dev
+uid=${uid:=$(id -u)} \
+gid=${gid:=$(id -g)} \
+    docker-compose -f src/docker-compose.yml run dev

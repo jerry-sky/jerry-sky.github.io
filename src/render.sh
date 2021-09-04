@@ -11,10 +11,10 @@ mkdir -p dist
 cp -r assets dist/
 
 # render the css
-$SRC_DIR/sass template/style.scss > dist/style.css
+sass template/style.scss > dist/style.css
 
 # prepare the renderer
-renderer="$SRC_DIR/pandoc \
+renderer="pandoc \
     --template template/document-template.html \
     --from markdown-blank_before_header-implicit_figures+lists_without_preceding_blankline+gfm_auto_identifiers \
     --to html \

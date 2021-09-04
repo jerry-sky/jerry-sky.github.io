@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+
+  dev:
+    build:
+      context: ../
+      dockerfile: src/Dockerfile
+    working_dir: '/wrk'
+    volumes:
+      - '../:/wrk'
+    entrypoint: '/wrk/src/dev.sh'
+    network_mode: host
+    user: $uid:$gid
+
+
+  prod:
+    build:
+      context: ../
+      dockerfile: src/Dockerfile
+    working_dir: '/wrk'
+    entrypoint: '/wrk/src/render.sh'
+    volumes:
+      - '../:/wrk'
+    user: $uid:$gid

@@ -20,7 +20,7 @@ jobs:
           ref: 'gh-pages'
 
       - name: 'Render the website'
-        run: uid=$UID gid=$GID ./prod
+        run: ./prod
 
       - name: 'Get current time'
         uses: gerred/current-time@v1.0.0
