@@ -1,22 +1,3 @@
-body {
-    font-family: "Merriweather", serif;
-    color: #b4b3b1;
-    background-color: #2f3031;
-}
-
-a,
-a:visited {
-    text-decoration: none;
-    color: #0da5ec;
-}
-
-code {
-    font-family: "Fira Code", monospace;
-}
-
-img {
-    max-width: 100%;
-}
 
 @keyframes bg-movement-one {
     0% {
@@ -122,76 +103,5 @@ img {
                 left: random(100) * 1%;
             }
         }
-    }
-}
-
-body {
-    margin: 0 30%;
-}
-
-.container {
-    display: flex;
-    height: 100vh;
-    min-height: 500px;
-    flex-flow: column;
-    text-align: center;
-    justify-content: center;
-}
-
-.logo {
-    width: 30%;
-    display: block;
-    margin: auto;
-}
-
-.buttons p {
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-.buttons p > a {
-    padding: 15px;
-    display: flex;
-    align-items: center;
-}
-
-.buttons p > a > img {
-    margin-right: 6px;
-    width: 12px;
-    height: 12px;
-}
-
-/* support most screen sizes */
-/* very large screens (TVs and other) */
-/* big screens (desktops) */
-@media (max-width: 1200px) {
-    body {
-        margin: 0 25%;
-    }
-}
-
-/* medium screens (laptops) */
-@media (max-width: 1024px) {
-    body {
-        margin: 0 15%;
-    }
-}
-
-/* smaller screens (tablets) */
-@media (max-width: 768px) {
-    body {
-        margin: 0 10%;
-    }
-}
-
-/* small screens (phones) */
-@media (max-width: 480px) {
-    body {
-        margin: 0 10px;
-    }
-
-    .logo {
-        width: 40%;
     }
 }

@@ -11,7 +11,7 @@ mkdir -p dist
 cp -r assets dist/
 
 # render the css
-sass template/style.scss > dist/style.css
+sass public/style/index.scss > dist/style.css
 
 # prepare the renderer
 renderer="pandoc \
