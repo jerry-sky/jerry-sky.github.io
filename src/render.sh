@@ -25,7 +25,7 @@ renderer="pandoc \
 # prepare the background file
 background="/tmp/background.html"
 # how many particles to generate
-particle_quantity=50
+particle_quantity=100
 # wipe the file clean
 printf '' > "$background"
 for j in one two; do

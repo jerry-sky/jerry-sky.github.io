@@ -1,45 +1,46 @@
-
 @keyframes bg-movement-one {
     0% {
-        transform: rotate(45deg) translate(0, 150vh, 0);
+        transform: rotate(45deg) translateY(150vh);
     }
     100% {
-        transform: rotate(45deg) translate(0, -150vh, 0);
+        transform: rotate(45deg) translateY(-150vh);
     }
 }
 
 @keyframes bg-movement-two {
     0% {
-        transform: rotate(45deg) translate(0, 0vh, 0);
+        transform: rotate(45deg) translateY(0vh);
     }
     50% {
-        transform: rotate(45deg) translate(0, -150vh, 0);
+        transform: rotate(45deg) translateY(-150vh);
         opacity: 1;
     }
     51% {
-        transform: rotate(45deg) translate(0, -150vh, 0);
+        transform: rotate(45deg) translateY(-150vh);
         opacity: 0;
     }
     52% {
-        transform: rotate(45deg) translate(0, 150vh, 0);
+        transform: rotate(45deg) translateY(150vh);
         opacity: 0;
     }
     53% {
-        transform: rotate(45deg) translate(0, 150vh, 0);
+        transform: rotate(45deg) translateY(150vh);
         opacity: 1;
     }
     100% {
-        transform: rotate(45deg) translate(0, 0vh, 0);
+        transform: rotate(45deg) translateY(0vh);
     }
 }
 
 .background {
     position: fixed;
-    left: -25vh;
-    top: -25vh;
+    $offset: min(-25vh, -25vw);
+    left: $offset;
+    top: $offset;
     z-index: -1;
-    width: 150vw;
-    height: 150vh;
+    $size: max(150vw, 150vh);
+    width: $size;
+    height: $size;
     animation-name: bg-movement-one;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
@@ -49,10 +50,6 @@
     &.two {
         animation-name: bg-movement-two;
     }
-
-    // for now the animations are disabled due to performance issues
-    animation: none;
-    transform: rotate(45deg);
 
     .background-particle {
         position: relative;
@@ -73,7 +70,7 @@
     $medium-colour: fade-in($base-colour, 0);
     $fast-colour: fade-in($base-colour, 0);
 
-    $particle-quantity: 50;
+    $particle-quantity: 100;
 
     &.slow {
         animation-duration: 400s;
@@ -96,11 +93,13 @@
             @include background-particle(4px, 32px, $fast-colour);
         }
     }
-    @each $speed in slow, medium, fast {
-        @for $i from 1 through $particle-quantity {
-            &.#{$speed} > .background-particle:nth-child(#{$i}) {
-                top: random(100) * 1%;
-                left: random(100) * 1%;
+    @each $instance in one, two {
+        @each $speed in slow, medium, fast {
+            @for $i from 1 through $particle-quantity {
+                &.#{$instance}.#{$speed} > .background-particle:nth-child(#{$i}) {
+                    top: random(100) * 1%;
+                    left: random(100) * 1%;
+                }
             }
         }
     }
