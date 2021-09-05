@@ -28,13 +28,18 @@ background="/tmp/background.html"
 particle_quantity=100
 # wipe the file clean
 printf '' > "$background"
+# enclose it in a container
+printf '<div class="background">' >> "$background"
 for j in one two; do
     for i in slow medium fast; do
-        printf '<div class="background '$i" "$j'">' >> "$background"
+        printf '<div class="background-animation '$i" "$j'">' >> "$background"
         yes '<div class="background-particle"></div>' | head -n "$particle_quantity" >> "$background"
         printf '</div>\n' >> "$background"
     done
 done
+printf '</div>' >> "$background"
 
 # render the main index file
 $renderer public/index.md -o dist/index.html --include-before-body="$background"
+logo_svg=$(cat assets/logo.svg)
+sed -e "s/===LOGO===/${logo_svg//\//\\/}/" -i dist/index.html

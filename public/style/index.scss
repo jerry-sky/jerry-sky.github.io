@@ -1,16 +1,20 @@
+@import 'settings';
 @import 'background.scss';
+@import 'front-page.scss';
+@import 'main.scss';
+@import 'footer.scss';
 
 body {
     font-family: "Merriweather", serif;
-    color: #b4b3b1;
-    background-color: #2f3031;
-    margin: 0 30%;
+    color: $font-color;
+    background-color: $background-color;
+    margin: 0;
 }
 
 a,
 a:visited {
     text-decoration: none;
-    color: #0da5ec;
+    color: $link-font-color;
 }
 
 code {
@@ -21,66 +25,94 @@ img {
     max-width: 100%;
 }
 
-.container {
-    display: flex;
-    height: 100vh;
-    min-height: 500px;
-    flex-flow: column;
-    text-align: center;
-    justify-content: center;
+hr {
+    border: none;
+    border-top: solid 1px $font-color;
+    opacity: .3;
+    margin: 40px 0;
 }
 
-.logo {
-    width: 30%;
-    display: block;
-    margin: auto;
-}
+.shadow-transition {
+    $height: 30px;
+    $intensity: 8px;
 
-.buttons {
-    p {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
+    overflow: hidden;
+    padding-top: $height;
+    margin-top: -$height;
+    position: relative;
+    z-index: 10;
+    height: 0;
 
-        a {
-            padding: 15px;
-            display: flex;
-            align-items: center;
-            img {
-                margin-right: 6px;
-                width: 12px;
-                height: 12px;
-            }
+    &.down {
+        padding: 0;
+        margin: 0;
+        padding-bottom: $height;
+        margin-bottom: -$height;
+
+        .transition {
+            margin-top: -$intensity;
         }
     }
+
+    .transition {
+        box-shadow: black 0 0 $height;
+        width: 500%;
+        margin-left: -200%;
+        height: $intensity;
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+  background: lighten(#333, 3.5%);
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: lighten(#333, 9%);
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: lighten(#333, 30%);
+}
+/* Corner */
+::-webkit-scrollbar-corner {
+  background: lighten(#333, 3.5%);
+}
+/* Resizer */
+::-webkit-resizer {
+  background: lighten(#333, 8%);
 }
 
 /* support most screen sizes */
 /* very large screens (TVs and other) */
+.container {
+    margin: 0 15%;
+}
+
 /* big screens (desktops) */
 @media (max-width: 1200px) {
-    body {
-        margin: 0 25%;
+    .container {
+        margin: 0 10%;
     }
 }
 
 /* medium screens (laptops) */
 @media (max-width: 1024px) {
-    body {
-        margin: 0 15%;
+    .container {
+        margin: 0 10%;
     }
 }
 
 /* smaller screens (tablets) */
 @media (max-width: 768px) {
-    body {
+    .container {
         margin: 0 10%;
     }
 }
 
 /* small screens (phones) */
 @media (max-width: 480px) {
-    body {
+    .container {
         margin: 0 10px;
     }
 

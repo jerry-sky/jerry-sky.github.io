@@ -33,74 +33,84 @@
 }
 
 .background {
-    position: fixed;
-    $offset: min(-25vh, -25vw);
-    left: $offset;
-    top: $offset;
-    z-index: -1;
-    $size: max(150vw, 150vh);
-    width: $size;
-    height: $size;
-    animation-name: bg-movement-one;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
-    transform-origin: center center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: $secondary-background-color;
 
-    // the other copy of those three layers need to be offset
-    &.two {
-        animation-name: bg-movement-two;
-    }
+    .background-animation {
+        position: absolute;
+        $offset: min(-25vh, -25vw);
+        left: $offset;
+        top: $offset;
+        $size: max(150vw, 150vh);
+        width: $size;
+        height: $size;
+        animation-name: bg-movement-one;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        transform-origin: center center;
 
-    .background-particle {
-        position: relative;
-        display: inline-block;
-        z-index: -1;
-    }
-
-    @mixin background-particle($girth, $length, $colour) {
-        width: $girth;
-        height: $length;
-        // background-color: $colour;
-        box-shadow: inset 0 $length ($length / 2) ($length * -3 / 4) $colour;
-    }
-
-    // every layer can have its own shade of the base colour
-    $base-colour: rgba(255,255,255, 0.05);
-    $slow-colour: fade-in($base-colour, 0);
-    $medium-colour: fade-in($base-colour, 0);
-    $fast-colour: fade-in($base-colour, 0);
-
-    $particle-quantity: 100;
-
-    &.slow {
-        animation-duration: 400s;
-
-        & > .background-particle {
-            @include background-particle(10px, 64px, $slow-colour);
+        // the other copy of those three layers need to be offset
+        &.two {
+            animation-name: bg-movement-two;
         }
-    }
-    &.medium {
-        animation-duration: 200s;
 
-        & > .background-particle {
-            @include background-particle(6px, 48px, $medium-colour);
+        .background-particle {
+            position: relative;
+            display: inline-block;
+            z-index: -1;
         }
-    }
-    &.fast {
-        animation-duration: 100s;
 
-        & > .background-particle {
-            @include background-particle(4px, 32px, $fast-colour);
+        @mixin background-particle($girth, $length, $colour) {
+            width: $girth;
+            height: $length;
+            // background-color: $colour;
+            box-shadow: inset 0 $length ($length / 2) ($length * -3 / 4) $colour;
         }
-    }
-    @each $instance in one, two {
-        @each $speed in slow, medium, fast {
-            @for $i from 1 through $particle-quantity {
-                &.#{$instance}.#{$speed} > .background-particle:nth-child(#{$i}) {
-                    top: random(100) * 1%;
-                    left: random(100) * 1%;
+
+        // every layer can have its own shade of the base colour
+        $base-colour: rgba(255,255,255, .3);
+        $slow-colour: fade-in($base-colour, 0);
+        $medium-colour: fade-in($base-colour, 0);
+        $fast-colour: fade-in($base-colour, 0);
+
+        $particle-quantity: 100;
+
+        &.slow {
+            animation-duration: 400s;
+
+            & > .background-particle {
+                @include background-particle(10px, 64px, $slow-colour);
+            }
+        }
+        &.medium {
+            animation-duration: 200s;
+
+            & > .background-particle {
+                @include background-particle(6px, 48px, $medium-colour);
+            }
+        }
+        &.fast {
+            animation-duration: 100s;
+
+            & > .background-particle {
+                @include background-particle(4px, 32px, $fast-colour);
+            }
+        }
+        @each $instance in one, two {
+            @each $speed in slow, medium, fast {
+                @for $i from 1 through $particle-quantity {
+                    &.#{$instance}.#{$speed} > .background-particle:nth-child(#{$i}) {
+                        top: random(10000) * 0.01%;
+                        left: random(10000) * 0.01%;
+                    }
                 }
             }
         }
+
     }
 }

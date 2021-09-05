@@ -1,0 +1,87 @@
+.front-page {
+    position: relative;
+    display: flex;
+    height: 100vh;
+    min-height: 500px;
+    flex-flow: column;
+    text-align: center;
+    justify-content: center;
+
+    $shadow-size: 6px;
+    $shadow-transparency: .45;
+
+    text-shadow: rgba($color: #000000, $alpha: $shadow-transparency) 0 0 $shadow-size;
+
+    .logo-container {
+        width: 100px;
+        margin: 0 auto;
+        display: block;
+
+        svg * {
+            fill: $font-color;
+            filter: drop-shadow(rgba($color: #000000, $alpha: $shadow-transparency * .35) 0 0 $shadow-size * 5);
+        }
+    }
+
+    .buttons {
+        p {
+            display: flex;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+
+            a {
+                padding: 15px;
+                display: flex;
+                align-items: center;
+                img {
+                    margin-right: 6px;
+                    width: 12px;
+                    height: 12px;
+                }
+            }
+        }
+    }
+
+    .scroll-down {
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        opacity: .75;
+
+        .arrow-down {
+            $width: 25px;
+            $thickness: px;
+            $skew: 20deg;
+
+            margin: auto;
+
+            position: relative;
+            text-align: center;
+            padding: .1px;
+            height: $thickness;
+            width: $width;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 51%;
+                background: $font-color;
+                transform: skew(0deg, $skew);
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                height: 100%;
+                width: 50%;
+                background: $font-color;
+                transform: skew(0deg, -$skew);
+            }
+        }
+    }
+
+}

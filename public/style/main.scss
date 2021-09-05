@@ -1,0 +1,19 @@
+@import 'settings';
+
+main {
+    padding: 20px 0;
+    min-height: calc(100vh - 20px);
+
+    @for $i from 1 through 6 {
+        h#{$i} {
+            color: $secondary-font-color;
+            text-shadow: rgba($color: #000000, $alpha: .5) 0 0 5px;
+        }
+    }
+
+    img {
+        margin: auto;
+        display: block;
+        box-shadow: rgba($color: #000000, $alpha: .3) 0 0 10px;
+    }
+}

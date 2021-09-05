@@ -1,0 +1,12 @@
+@import 'settings';
+
+footer {
+    padding: 40px;
+    background-color: $tertiary-background-color;
+
+    p {
+        text-align: right;
+        opacity: .75;
+        margin: 0;
+    }
+}
