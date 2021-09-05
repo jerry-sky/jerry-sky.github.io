@@ -1,34 +1,37 @@
+$bg-movement-position-max: translateY(max(150vh, 150vw));
+$bg-movement-position-min: translateY(min(-150vh, -150vw));
+
 @keyframes bg-movement-one {
     0% {
-        transform: rotate(45deg) translateY(150vh);
+        transform: rotate(45deg) $bg-movement-position-max;
     }
     100% {
-        transform: rotate(45deg) translateY(-150vh);
+        transform: rotate(45deg) $bg-movement-position-min;
     }
 }
 
 @keyframes bg-movement-two {
     0% {
-        transform: rotate(45deg) translateY(0vh);
+        transform: rotate(45deg) translateY(0);
     }
     50% {
-        transform: rotate(45deg) translateY(-150vh);
+        transform: rotate(45deg) $bg-movement-position-min;
         opacity: 1;
     }
     51% {
-        transform: rotate(45deg) translateY(-150vh);
+        transform: rotate(45deg) $bg-movement-position-min;
         opacity: 0;
     }
     52% {
-        transform: rotate(45deg) translateY(150vh);
+        transform: rotate(45deg) $bg-movement-position-max;
         opacity: 0;
     }
     53% {
-        transform: rotate(45deg) translateY(150vh);
+        transform: rotate(45deg) $bg-movement-position-max;
         opacity: 1;
     }
     100% {
-        transform: rotate(45deg) translateY(0vh);
+        transform: rotate(45deg) translateY(0);
     }
 }
 
