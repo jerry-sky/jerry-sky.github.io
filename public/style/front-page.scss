@@ -28,15 +28,17 @@
             display: flex;
             justify-content: space-evenly;
             flex-wrap: wrap;
+            font-size: 130%;
 
             a {
                 padding: 15px;
                 display: flex;
                 align-items: center;
                 img {
-                    margin-right: 6px;
-                    width: 12px;
-                    height: 12px;
+                    margin-right: 10px;
+                    $size: 15px;
+                    width: $size;
+                    height: $size;
                 }
             }
         }
